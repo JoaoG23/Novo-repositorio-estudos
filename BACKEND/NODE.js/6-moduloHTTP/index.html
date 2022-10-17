@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Principal</title>
+</head>
+<body>
+    <H1>Origens de fotos</H1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel doloremque, non accusantium explicabo accusamus sint laboriosam quibusdam modi animi. Minima ducimus atque neque repellat veniam labore obcaecati ad nulla molestiae!</p>
+    <button onclick="del()">Delete</button>
+    <button onclick="post()">Post</button>
+    <button onclick="get()">GET</button>
+    <button onclick="put()">Put</button>
+
+    <script>
+        const url = "http://localhost:3000/teste"
+
+        function post(){
+            fetch(url , {
+                method: "post"
+            }).then(res => {
+                console.log(res);
+            }).catch(erro => {
+                console.log(erro);
+            })
+            
+        }
+        function get(){
+            fetch(url , {
+                method: "get"
+            }).then(res => {
+                console.log(res);
+            }).catch(erro => {
+                console.log(erro);
+            })
+
+        }
+        function del (){
+            fetch(url , {
+                method: "delete"
+            }).then(res => {
+                console.log(res);
+            }).catch(erro => {
+                console.log(erro);
+            })
+
+        }
+
+        function put(){
+            fetch(url , {
+                method: "put"
+            }).then(res => {
+                console.log(res);
+            }).catch(erro => {
+                console.log(erro);
+            })
+
+        }
+
+
+
+    </script>
+</body>
+</html>

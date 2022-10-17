@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio</title>
+</head>
+<body>
+    <script>
+        let peoples = ["Marcos","Jorgina","Falsto","Gamarina"];
+        function sorteio(){
+            let numpes = peoples.length;
+            let num_soma = Math.floor(Math.random() * numpes);
+            document.getElementById("o").innerText = peoples[num_soma];
+        }
+    </script>
+    <h1 id="o"></h1>
+    <button onclick="sorteio()">Sortear</button>
+</body>
+</html>

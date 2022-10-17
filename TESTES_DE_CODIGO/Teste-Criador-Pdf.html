@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <table id="dados"> 
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Cargo</th>
+            </tr>
+            <tr>
+                <td>Macoratti</td>
+                <td>55</td>
+                <td>Programador</td>
+            </tr>
+            <tr>
+                <td>Jefferson</td>
+                <td>26</td>
+                <td>Engenheiro</td>
+            </tr>
+            <tr>
+                <td>Janice</td>
+                <td>24</td>
+                <td>Web Designer</td>
+            </tr>
+        </table>
+    </div>
+    <button onclick="relatorioPdf()">Relatorio PDF</button>
+    <script type="text/javascript">
+
+    function relatorioPdf(){
+        let puxaDados = document.getElementById('dados').innerHTML;
+        let janelaAberta = window.open('','teste','width= 700,height= 600');
+        janelaAberta.document.write("<html><head>");
+        janelaAberta.document.write("<title>PFD</title></head>");
+        janelaAberta.document.write("<body>");    
+        // janelaAberta.document.write(puxaDados);    
+        // janelaAberta.document.write("</body></html>");    
+        // janelaAberta.document.close();
+        // janelaAberta.print();
+    }     
+    </script>
+</body>
+</html>

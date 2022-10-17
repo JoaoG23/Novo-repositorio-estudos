@@ -1,0 +1,38 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>o que o socket io resolve</title>
+</head>
+
+<body>
+    <div id="list">
+
+    </div>
+    <script> 
+    // QUANDO O FAZEMOS ISSO PARA ATUALIZAR OS REGISTRO, 
+    // Dependo do tanto de requisicao recebermos simularios um ataque ao nosso servidor deixando a aplicacao sem perfomace.
+        setInterval(() => {
+
+
+            fetch('/list')
+                .then(resp => resp.json())
+                .then(data => {
+                    let list = "<ul>"
+                    data.map(item => {
+                        list += `<li>${item}</li>`
+                    })
+                    list += "</ul>"
+                    document.querySelector("#list").innerHTML = list;
+                }).catch(erro => {
+                    console.log(erro);
+                });
+
+        }, 1000);
+    </script>
+</body>
+
+</html> -->

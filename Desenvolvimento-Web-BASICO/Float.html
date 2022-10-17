@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            font-size: 1.5rem;
+        }
+        #i1{
+           float:left; /*imagem fica flutuando ao lado a do paragrafo (quando queremos posicionar um objeto do lado do outro)*/
+        }
+        #i2{
+            width: 5cm;
+            float:right;
+        }
+        p{
+            clear:none;/*Ele elimina o efeito de abraçar a imagem
+            both= para as duas imagens*/
+        }
+        div{
+            margin-top: 20%;
+            border: 2px solid grey;
+            overflow:auto;/*para que a imagem entre dentro da outra*/
+            background-color: hotpink;
+        }
+        li{
+            float:right;
+            list-style-type: none;
+            padding: 10px;
+            background-color: rgb(96, 76, 110);
+            margin: 10px;/*o float e usado para fazer menus*/
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>Imagens</li>
+        <li>Menu</li>
+        <li>Sobre</li>
+    </ul>
+<div>
+    <img id="i1" src="./imagens/images.png">
+
+    <p>Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo
+        Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo Texto esta abaixo   </p>
+</div>
+</body>
+</html>

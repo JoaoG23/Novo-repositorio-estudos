@@ -1,0 +1,29 @@
+Qual o problema !
+	Os dados da nossa API não estão sendo mostrado nessa pagina.
+	CORS - 
+	Ex: Quando e colocado localhost:3000; em outro dispositvo sem
+	ser o proprio Servidor da API.
+	
+Quem o faz acontecer: Compartilhamento de origem cruzadas CORS.
+
+Quando ocorre: 
+	Quando faço requisições para o meu sistema do mesmo dominio
+funciona, quando eu faço requisições tipo fetch de outro dominio ( dominio diferente do meu),ela trava
+as requisições, Para proteger o meu Back-end. 
+ 
+Por que acontecer:
+quando eu faço requisições tipo fetch de outro dominio 
+( dominio diferente do meu) no mesmo servidor, o CORS
+travar as requisições, Para proteger o meu Back-end.  
+
+Onde ocorre : No front-end com fetch.
+
+Como resolver:
+Às vezes quero ter 2 dominio apontando para o meu servidor 1 para dois dominios.
+
+A solucão ....
+npm install cors
+
+cors = require('cors');
+app.use(cors());
+

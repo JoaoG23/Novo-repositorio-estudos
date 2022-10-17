@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Arrays </title>
+</head>
+
+<body>
+    <i>Trabalhando trabalhando arrays olhe o console</->
+    <div id="teste"></div>
+
+    <script>
+
+        // {
+        //     // Para junta varios Arrays CONTACT
+        //     const zero = 0;
+        //     const numeroPositivo = [1 , 2, 3];
+        //     const numeroNegativo = [-3 , -2 , -1];
+
+        //     // console.log(numeroPositivo);
+        //     // console.log(numeroNegativo);
+        //     let numeros = numeroNegativo.concat( zero , numeroPositivo );
+        //     let numeros2 = numeroNegativo.concat( numeroPositivo );
+
+        //     console.log(numeros);
+        //     console.log(numeros2);
+
+        // }
+
+        // {
+        //     // Se Impar ou par EVERY interar ate 
+        //     // que a funcao devolve false.
+        //     const imparPar = (x) => { x % 2 === 0 ? true : false;}
+        //     const maiorQueValor = (x) => { x > 0 ? true : false;}
+
+        //     let numeros = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+        //     let selecao = numeros.every(maiorQueValor);
+        //     console.log(selecao);
+        // } 
+
+
+        // {
+        //     // Se Impar ou par SOME 
+        //     function isEven(x){
+
+        //         return x > 4 ? true : false;
+        //     }
+
+        //     // let numeros = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        //      let numeros = [0,1,2,3,4,5];
+
+        //     let selecao = numeros.some(isEven, () => {
+        //         console.info(selecao);
+        //     });
+        //     console.log(selecao);
+        // }
+
+
+    // function escopoForEach() {
+    //         // FOREACH
+    //         function mostraNaTela(numero, elementoMostrador) {
+    //             const elementoRevelador = document.querySelector(`${elementoMostrador}`);
+    //             elementoRevelador.innerHTML += `<li>${numero}</li>`
+    //         }
+    //         console.log(teste);
+
+    //          let numeros = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    //         //  let numeros = [0,1,2,3,4];
+
+    //         numeros.forEach((numeros) => mostraNaTela(numeros,'#teste'))
+           
+    //         // numeros.forEach((numero) => teste.innerHTML += `<li>${numero}</li>`);
+    //         console.log(numeros);
+    //     }
+
+
+
+        // {
+        //     // Se maior que 4 no MAP retorna um novo arrays com todos e true e false
+        //     function maiorQue4(x){
+
+        //         return x > 4 ? true : false;
+        //     }
+
+        //     // let numeros = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        //     let numeros = [0,1,2,3,4,5,6,7,8,9,10];
+
+        //     let selecao = numeros.map(maiorQue4);
+        //     console.log(selecao);
+        // }
+
+        // {
+        //     // Se maior que 4 no filter = filtra somente o que for igual o que passa no filtro.
+
+        //     function maiorQue4(x){
+
+        //         // return x > 3 ? true : false;
+        //         return x > 4 ? x : 0;
+        //     }
+
+        //     // let numeros = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        //      let numeros = [0,1,2,3,4,5,6,7,8,9,10];
+
+        //     let selecao = numeros.filter(maiorQue3);
+        //     console.log(selecao);
+        // }
+
+
+        // {
+        //     // REDUCE -> Soma um certo numero do arrays
+
+        //     let numeros = [1,2,3,4];
+
+
+        //     let selecao = numeros.reduce(( anterior , atual ) =>  anterior * atual );
+
+        //     console.log(selecao);
+        // }
+
+        // {
+        //     // For of -> repete
+
+        //     let numeros = [1,2,3,4,5];
+
+        //     for ( const n of numeros ) {
+
+        //         console.log( n  % 2 === 0 ? 'par' : 'impar' );
+        //     }
+
+        //     console.log(selecao);
+        // }
+
+        {
+            // @@Iterator --- Tipo array --
+            // let numeros = [1, 2, 3, 4, 5];
+            // let aEntries = numeros.entries(); // Obtem o valor da chave e o valor..
+
+            // console.log(aEntries.next().value);
+            // console.log(aEntries.next().value);
+            // console.log(aEntries.next().value);
+            // console.log(aEntries.next().value);
+            // console.log(aEntries.next().value);// [4,5] retorna um array com chave e valor.
+
+            // for (const n of numeros) {
+
+            //     console.log(n);
+            // }
+            // {
+
+            //     // @@Iterator --- Tipo key --
+
+            //     let numeros = [1, 2, 3, 4, 5];
+            //     let aKeys = numeros.keys(); // Obtem o valor da chave e o valor..
+
+            //     console.log(aKeys.next());
+            //     console.log(aKeys.next());
+            //     console.log(aKeys.next());
+            //     console.log(aKeys.next());
+            //     console.log(aKeys.next());
+            //     console.log(aKeys.next());
+            //     // console.log(aKeys.next());// retorna um objeto com chaves 
+
+            // }
+
+        }
+
+        // let numeros = [1, 2, 3, 4, 5];
+        // let numerosCopy2 = Array.from(numeros , x => ( x > 2 )); // Obtem o valor da chave e o valor..
+        // console.log(numerosCopy2);
+
+ 
+
+        // Exercicio como como refatora a mascara de front de cpf
+        // Para multiplas mascaras 
+(        function mascaraGenerica() {
+            let salto = 3;
+            let letras = '189233444';
+            let elemento = '.';
+            
+            for (let i = 0; i < letras.length; i++) {
+
+            }
+            console.info(elemento + letras);
+            // para cada 1 analiza se o ulimo mais 3
+        })();
+    </script>
+</body>
+
+</html>

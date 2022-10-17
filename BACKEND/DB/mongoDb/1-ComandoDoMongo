@@ -1,0 +1,140 @@
+*********COMANDO DO MONGO **********
+--
+1- Para ver todos os banco do Servidor
+
+digite:
+show dbs
+
+2- Ver o DB usado atualmente
+
+digite:
+db
+
+3 - Criar Banco de dados
+
+digite:
+db.createDatabase('nome_do_banco')
+
+4 - Apagar um banco 
+
+digite:
+db.dropDatabase()
+
+5 - Para Mudar para outro banco
+digite:
+use nome_do_banco
+
+6- Para Criar um novo banco uma coleção 
+
+digite:
+use nome_do_banco
+
+em seguida
+db.createCollection('nome_do_banco')
+
+7 - Apagar coleção
+digite: db.nome_colecao.drop()
+EX:
+db.users.drop()
+
+8 - Mostra coleção
+digite: 
+show collections
+
+9 - Para inserir um documento no banco
+
+digite:
+
+db.users.insertOne({nome:"Joao" , senha:"1234", email:"joao@gmail.com"})
+
+10 - Mais documento de uma só vez
+crie um Array.
+digite:
+
+db.users.insertMany([{nome:"josefa"}, {nome:"Carla"}, {nome:"Doceineia"}])
+
+
+11- Selecionando documentos 
+
+digite:
+
+db.users.find()
+
+
+12- Selecionando UM documento
+
+digite:
+db.users.findOne()
+
+
+
+13- Selecionando 2 ou mais documentos
+Atencao : o pretty deixa bonito //Opcional
+
+digite:
+db.users.find().limit(2).pretty()
+
+14- Filtrando por uma propriedade
+
+digite:
+db.users.find({nome:"Joao"})
+
+contagem: para achar quanto tem do mesmo tipo
+
+digite:
+db.users.find({type:"admin"}).count()
+
+15 - Para Usar a descrente ou ascrente
+
+// No caso aqui estamos pegando para ultimo.
+
+digite:
+Do primeiro para o ultimo
+db.users.find().sort({nome:1})
+
+Do ultimo para o primeiro
+db.users.find().sort({nome:-1})
+
+
+16- modifica um campo em um documento
+
+digite:
+db.users.updateOne({nome:"Joao"} , {$set:{email:"joao@gmail.com"}})
+
+
+17- Modifica varios documentos
+
+Digite:
+db.users.updateMany({},{$set:{class:"Logicas"}})
+
+18- Deletas varios documentos
+Digite:
+db.users.updateMany({},{$unset:{class:""}})
+
+18- Deletar somente um Documento
+
+db.peoples.deleteOne({yourName:"Teste JSON "},1)
+
+19- Muda o documento como um todos
+Digite:
+
+db.users.update({nome:"Joao"},{nome:"Marcos" , senha:"55554"})
+
+20 - Atualiza documento pelo nome mas se não tiver, ele criar ele.
+
+digite:
+db.users.update({nome:"Joao"},{nome:"Marcos" , senha:"55554"},{upsert:"true"})
+
+21 - Todos os campos lugares
+digite:
+db.users.updateMany({},{$rename:{"Visits":"views"}})
+
+# REVISADO SEGUNDA-FEIRA ATE AQUI 18-10
+
+
+
+
+
+
+
+

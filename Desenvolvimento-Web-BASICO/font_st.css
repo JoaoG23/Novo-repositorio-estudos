@@ -1,0 +1,51 @@
+{
+    font-family:"times",sans-serif;
+    font-style: italic;
+    font-size: 1cm;
+    font-weight:100;
+    font-variant: small-caps;
+}
+h1{
+    font-family:Arial, Helvetica, sans-serif;
+}
+#p1{
+font-family: Arial, Helvetica, sans-serif;
+}
+.link{
+    text-decoration: none;
+    color:rgb(2, 21, 190);
+    cursor:crosshair;/*Modo do cursos*/
+    background-color: rgb(255, 255, 255);
+    padding:7px;
+    font-size: 30px;
+    border:5px solid rgb(184, 30, 30);
+    border-radius:20px;
+}
+/*.link:hover{
+    background:rgb(218, 82, 82);
+    color:rgb(255, 255, 255);
+}*/
+.link:active{/*quando voce clica nele*/
+    background:rgb(218, 82, 82);
+    color:rgb(255, 255, 255);
+}
+ul{
+    /*list-style-image: url(../imagens/images.png);*/
+    list-style-position:inside;
+    margin:0px;
+    padding:10px;
+    background-color: royalblue;
+}
+ol{
+      list-style-type: none;
+      list-style-position:inside;
+      margin:0px;
+      padding:10px;
+      background-color: salmon;
+      
+}
+li{
+    border: 2px solid;
+    background-color: yellow;
+    margin:10px;
+}

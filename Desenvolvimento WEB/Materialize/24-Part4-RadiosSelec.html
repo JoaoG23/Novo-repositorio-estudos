@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-----Data inicial ---11-09-21--
+    -----Dia seguinte ----12-00-00---->
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ------------Bibliotecas e FrameWoks--------------- -->
+    <link type="text/css" rel="stylesheet" href="./materialize/css/materialize.css" media="screen,projection" />
+
+    <title>Parte 4 Selecões</title>
+</head>
+<body>
+
+
+
+    <form  action="#">
+        <p>
+          <label>
+            <input name="group1" type="radio"checked />
+            <span>Red</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group1" type="radio" />
+            <span>Yellow</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input class="with-gap" name="group1" type="radio"  />
+            <span>Green</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group1" type="radio" disabled="disabled" />
+            <span>Brown</span>
+          </label>
+        </p>
+      </form>
+        
+      
+-----Com espaços
+
+      
+  <p>
+    <label>
+      <input class="with-gap" name="group3" type="radio" checked />
+      <span>Red</span>
+    </label>
+  </p>
+
+
+  ======Check-box=============
+  <form action="#">
+    <p>
+      <label>
+        <input type="checkbox" />
+        <span>Red</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="checkbox" checked="checked" />
+        <span>Yellow</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="checkbox" class="filled-in" checked="checked" />
+        <span>Filled in</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input id="indeterminate-checkbox" type="checkbox" />
+        <span>Indeterminate Style</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="checkbox" checked="checked" disabled="disabled" />
+        <span>Green</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="checkbox" disabled="disabled" />
+        <span>Brown</span>
+      </label>
+    </p>
+  </form>
+
+
+  <!-- Switchs ----- Ou interruptores -->
+
+   Interruptores------------
+   <div class="switch">
+    <label>
+      Off
+      <input type="checkbox">
+      <span class="lever blue"></span>
+      On
+    </label>
+  </div>
+
+  <!-- Disabled Switch -->
+  <div class="switch">
+    <label>
+      Off
+      <input disabled type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+
+  Baixar arquivos -------
+
+
+  
+  <form action="#">
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+  </form>
+
+  multiple
+
+  <form action="#">
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file" multiple>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+      </div>
+    </div>
+  </form>
+
+
+<br>
+<br>
+<br>
+Ranger HMLT
+<form action="#">
+    <p class="range-field">
+      <input type="range" id="test5" min="0" max="100" />
+    </p>
+  </form>
+
+
+        
+
+    <script type="text/javascript" src="./materialize/js/materialize.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+UML Linguagem de modelagem unificada.
+Diagrama de classes
+
+1 - Linha 1 - Nome Class
+2 - Linha 2 - Propriedades da Class
+3 - Linha 3 - Metodos ()
+
+Visibilidade da classes
+
++ Significa publico = Orelhão
+- = Privado = Celular 
+# = Protegido = Telefone da sua casa familia
+
++ 1 Exemplio
+
+Controle
+Um controle de TV
+Publico 
++ Botoes
++ Carcaça
+Protegido
+# Circuitos - somente a tv e o controle tem acesso.

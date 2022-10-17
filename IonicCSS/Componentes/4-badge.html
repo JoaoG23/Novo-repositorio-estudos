@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#eb445a" />
+    <style>
+        :root{
+            --roxo:#bd13df;
+        }
+        .roxo{
+            background-color: var(--roxo);
+            color: beige;
+        }
+        .roxo:hover{
+            color: rgb(86, 86, 86);
+        }
+    </style>
+    <title>Criando Alguns botoes</title>
+</head>
+<body>
+
+<!-- Default -->
+<ion-badge>99</ion-badge>
+
+<!-- Colors -->
+<ion-badge color="primary">11</ion-badge>
+<ion-badge color="secondary">22</ion-badge>
+<ion-badge color="tertiary">33</ion-badge>
+<ion-badge color="success">44</ion-badge>
+<ion-badge color="warning">55</ion-badge>
+<ion-badge color="danger">66</ion-badge>
+<ion-badge color="light">77</ion-badge>
+<ion-badge color="medium">88</ion-badge>
+<ion-badge color="dark">99</ion-badge>
+
+<!-- Item with badge on left and right -->
+<ion-item>
+  <ion-badge slot="start">11</ion-badge>
+  <ion-label>My Item</ion-label>
+  <ion-badge slot="end">22</ion-badge>
+</ion-item>
+  
+</body>
+</html>

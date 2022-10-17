@@ -1,0 +1,84 @@
+{
+    "openapi":"3.0.0",
+    "info":{
+        "title":"API de Jkankan gerenciamento de PostIt",
+        "description":"Essa API tem objetivo de genenciar os PostIts back-end da aplicacão Jkankan",
+        "termsOfServices":"http://localhost:3000/terms",
+        "contact":{
+            "email":"joaoguilherme94@live.com"
+        }
+    },
+        "version":"1.0.0",
+        "servers":[
+            {
+                "url":"http://localhost:3000/v1",
+                "description":"Ambiente de desenvolvimento"
+            },
+            {
+                "url":"http://www.cods.com",
+                "description":"Demo produção"
+            }
+        ],
+        "paths":{
+            "/posts":{
+                "post":{
+                    "summary":"Criar Nova Tarefa",
+                    "description":"Roda de criacão de uma nova tarefas para o kanban",
+                    "tags":["PostIt"],
+                    "requestBody":{
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/PostIt"
+                                },
+                                "examples":{
+                                    "postit":{
+                                        "value":{
+                                            "nome":"Prototipagem Jkankan",
+                                            "descricao":"Realizar prototipagem com das telas antes do desenvolvimento das tela",
+                                            "dataEntrega":"2022-07-20T21:26:33.429Z"
+                                        }
+                                    }
+                                },
+                                "responses": {
+                                    "400": {
+                                      "description": "Invalid ID supplied",
+                                      "content": {}
+                                    },
+                                    "404": {
+                                      "description": "Pet not found",
+                                      "content": {}
+                                    },
+                                    "405": {
+                                      "description": "Validation exception",
+                                      "content": {}
+                                    }
+                                  }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "components":{
+            "schemas":{
+                "PostIt":{
+                    "type":"object",
+                    "properties":{
+                        "nome":{
+                            "type":"string"
+                        },
+                        "descricao":{
+                            "type":"string"
+                        },
+                        "dataEntrega":{
+                            "type":"date"
+                        },
+                        "_id":{
+                            "type":"string"
+                        }
+                    }
+                }
+            }
+        }
+}

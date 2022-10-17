@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-----Data inicial ---11-09-21--
+    -----Dia seguinte ----12-00-00---->
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ------------Bibliotecas e FrameWoks--------------- -->
+    <link type="text/css" rel="stylesheet" href="./materialize/css/materialize.css"
+        media="screen,projection" />
+
+    <title>Parte 3 Formulários</title>
+</head>
+<body>
+
+    <!-- ---- Criando um input inline--- -->
+    <div class="row">
+        <form class="col s12">
+            Digite o seu email:
+            <div class="input-field inline">
+                <input type="email" id="email">
+                <label for="email">Email</label>
+            </div>
+        </form>
+         
+    </div>
+    <script type="text/javascript" src="./materialize/js/materialize.js"></script>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('#email');
+            var instances = M.Autocomplete.init(elems);
+        });
+
+    </script>
+</body>
+
+</html>

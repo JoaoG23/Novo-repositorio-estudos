@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimationCSS Timing Function</title>
+</head>
+<style>
+/* @keyframes changeColor {
+    0%{ background-color: chartreuse; width: 100px;}
+    25%{ background-color: yellow;}
+    50%{ background-color: red; width: 500px;}
+    100%{
+        background-color: blue; width: 200px;}
+} */
+@keyframes move {
+    0% {left:0px;}
+    100% {left:500px;}
+}
+.box{
+
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    animation-name: move;
+    animation-duration: 6s;
+    /* animation-delay: 1s; */
+    /* animation-iteration-count: 2; */
+    /* animation-direction:alternate; */
+    animation-fill-mode: forwards;
+}
+.div1{
+    animation-timing-function: linear;
+}
+.div2{
+    animation-timing-function: ease;
+}
+.div3{
+    animation-timing-function: ease-in;
+}
+.div4{
+    animation-timing-function: ease-out;
+}
+.div5{
+    animation-timing-function:ease-in-out;
+}
+
+</style>
+<body>
+    <div class="box div1">linear</div>
+    <div class="box div2">ease</div>
+    <div class="box div3">ease-in</div>
+    <div class="box div4">ease-out</div>
+    <div class="box div5">ease-in-out</div>
+</body>
+</html>

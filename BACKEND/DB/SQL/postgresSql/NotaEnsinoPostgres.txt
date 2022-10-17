@@ -1,0 +1,93 @@
+-------------- ENSINO POSTGRES ---------------
+1 - Para iniciar (START) o servidor de banco de dados, execute o seguinte procedimento:
+
+Abra o Prompt de comando MS-DOS (Iniciar ou Aperte o botão Windows).
+Caso windows 7 ou superior digite cmd e aperte Enter.
+Se não, vá em Executar e digite cmd e aperte Enter.
+Com o Prompt de comando do Windows aberto - Navegue até a pasta bin do PostgreSQL.
+ 
+
+Diretórios PostgreSQL:
+
+Se o Windows for 32 bits, será alguma dessas:
+"C:\Program Files\PostgreSQL\9.6\bin\"
+ 
+cd C:\Program Files (x86)\PostgreSQL\9.6\bin\
+ 
+Dentro da pasta bin digite o seguinte comando:
+ 
+pg_ctl -D "C:\Program Files (x86)\PostgreSQL\9.6\data" start
+Note que o -D tem que ser maiúsculo para que o comando seja executado perfeitamente.
+ 
+Para parar o servidor o procedimento é o mesmo, trocando somente a ultima palavra START por STOP.
+
+pg_ctl -D "C:\Program Files (x86)\PostgreSQL\9.6\data" stop
+
+Existe também a possibilidade de realizar o desligamento com segurança, sem que seja fechada todas as conexões, digite a opção -S ao final do comando.
+
+pg_ctl -D "C:\Program Files (x86)\PostgreSQL\9.6\data" stop -s 
+
+Podemos fazer a reinicialização do servidor com o mesmo comando, mudando a palavra STOP por RESTART.
+
+pg_ctl -D "C:\Program Files (x86)\PostgreSQL\9.6\data" restart -s 
+
+
+Trocando o postgres de porta
+Para trocar um postgres já instalado de porta, você precisa localizar o arquivo postgresql.conf. Geralmente esse arquivo se encontra no diretório de instalação padrão do postgres, nesse caso de exemplo, o caminho é: C:\Program Files (x86)\PostgreSQL\9.6\data
+
+Depois de localizar esse arquivo, encerre o serviço do postgres. Isso pode ser feito via CMD ou interface de Serviços mesmo, como achar melhor. 
+
+Em seguida, abra o arquivo postgresql.conf e altere a propriedade port, conforme a imagem.
+
+Altere o valor dessa propriedade para o valor da porta que deseja, por exemplo 5460. Feito isso, basta subir o serviço do Postgres novamente e ele já deve ser iniciado na nova porta.
+
+Obs: em alguns casos, pode ser necessário reiniciar a máquina.
+
+
+
+----------------------------------------------------------------------------------------
+
+Gerar um Auto incrament com serial
+
+https://www.postgresqltutorial.com/postgresql-not-null-constraint/
+
+Copiando um Csv
+
+ERROS RECORRENTES 
+CAUSA : Voce não retirou o Cabeçalho do arquivo.Csv
+
+LOGS DE ERRO :ERROR:  invalid input syntax for type integer: "idcolaborador;nome_colaborador;telefone_colaborador;data_de_insersao"
+CONTEXT:  COPY tbcolaboradorescsv, line 1, column idcolaborador: "idcolaborador;nome_colaborador;telefone_colaborador;data_de_insersao"
+SQL state: 22P02
+
+COMO RESOLVER :
+
+
+
+Copiando um Csv
+
+ERROS RECORRENTES 
+CAUSA : Voce tipo de Input 
+
+LOGS DE ERRO :ERROR:  invalid input syntax for type integer: "7;Andres Santo;3199996555;01/01/2022"
+CONTEXT:  COPY tbcolaboradorescsv, line 1, column idcolaborador: "7;Andres Santo;3199996555;01/01/2022"
+SQL state: 22P02
+
+COMO RESOLVER :
+
+https://pganalyze.com/docs/log-insights/app-errors/U137
+https://pt.stackoverflow.com/questions/321194/como-definir-o-set-client-encoding-utf8-de-forma-permanente
+https://stackoverflow.com/questions/18297980/pg-copy-error-invalid-input-syntax-for-integer
+
+Informações importantes -------------------------------------------------
+
+https://pt.stackoverflow.com/questions/101672/tem-como-saber-a-hora-que-um-registro-foi-adicionado-ao-banco
+
+Atalhos PostgreSQL
+PGAdmin =
+ctrl + shift + k + CAPSLOCK ATIVADO = Tudo maiúsculo
+ctrl + . = descomenta 
+ctrl + ; = comenta selecionado
+clique no Comando ctrl + espaco = sugestao 
+ex:
+where + ctrl + espaco

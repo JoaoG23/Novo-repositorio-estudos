@@ -1,0 +1,10 @@
+========== Atalho ------
+ctrl + Crique do mouse =  seleciona multiplos cursores ao mesmo tempo
+ctrl + shift + k = Tudo uppercase
+ctrl + ; = Comenta tudo 
+ctrl + . = Descomenta tudo.
+ctrl + x recorta linha
+
+
+
+

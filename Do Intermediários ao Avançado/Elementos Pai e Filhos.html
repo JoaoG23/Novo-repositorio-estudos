@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+    //   window.onload = function(){
+    //       let d1 = document.getElementById("d1");
+    //     //   console.log(d1.children[1]);
+    //     console.log(document.body.children)
+    //     //   (children[0..1]) achar um objeto dentro de objeto.
+    //   }
+    window.onload = function(){
+        let h1 = document.getElementsByTagName("h1")
+
+        for(let h of h1){
+            console.log(h)
+
+            h.addEventListener("click",whatsFather)
+        }
+        function whatsFather(e){
+            let t = e.target
+            console.log(t.parentElement)
+        }
+
+        // Caso vc clicar em titulo 1 ele cria uma div com titulo 1 + paragrafo e en titulo 2 faz o mesmo!
+    }
+    </script>
+    <title>elemento Pai & Filhos</title>
+
+</head>
+<body>
+    <div id="d1">
+        <h1>Titulo 1</h1>
+        <p>Lorem ipsum dolor sit amet
+             consectetur adipi
+             sicing elit. </p>
+    </div>
+
+    <div id="d2">
+        <h1>Titulo 2</h1>
+        <p>Lorem ipsum dolor sit amet
+             consectetur adipi
+             sicing elit. </p>
+    </div>
+</body>
+</html>

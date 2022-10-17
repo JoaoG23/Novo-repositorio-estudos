@@ -1,0 +1,34 @@
+SWAGGER - Como documentar
+
+1-Instale as dependencias
+ $ npm install swagger-ui-express
+ se for usar o typescript
+ $ npm install --save @types/swagger-ui-express
+
+
+2- Importar o swaggerUi
+
+import swaggerUi from 'swagger-ui-express';
+
+
+3-Criar um arquivo swagger.json
+4-Importar o arquivo swagger.json 
+
+import swaggerDocs from './swagger.json';
+
+
+5- Criar uma rota como abaixo e coloque o que swaggerDocs
+dentro de swaggerUi.setup.
+
+Obs: Esse metodo e OO
+  this.express.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+Observaçoes relevantes?
+01-sempre use USE em vez de GET para redenizar a documentacao.
+02-Inicie o sistema com o json vazio {}
+
+Pode usar outro funcional se quizer.
+
+6-Inicie o servidor e entre na rota docs
+GUIA DE REFERENCIA
+https://www.npmjs.com/package/swagger-ui-express?activeTab=readme

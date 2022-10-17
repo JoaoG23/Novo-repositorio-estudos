@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Socketio</title>
+</head>
+
+<body>
+    <div id="main">
+    </div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    // const socket = io('http://localhost:3000');
+
+    // // Comunicando com o Back end
+    // socket.on('hello', (data) =>{
+    //     // Recebendo mensagem
+    //     console.log(data.msg);
+
+    //     // Enviando mgs para o back
+    //     socket.emit('hello_client_response',{msg:"Tudo certo"});
+    // });
+
+    //********* 2 Mandando mensagem para todos **************
+    const socket = io('http://localhost:3000');
+
+    socket.on('hello', (data) =>{
+     
+        console.log(data.msg);
+    });
+</script>
+</body>
+
+</html>

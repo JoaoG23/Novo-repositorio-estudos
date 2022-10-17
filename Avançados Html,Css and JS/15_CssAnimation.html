@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimationCSS</title>
+</head>
+<style>
+@keyframes changeColor {
+    0%{ background-color: chartreuse; width: 100px;}
+    /* Começa no verde com 100 xp de largura */
+    25%{ background-color: rgb(255, 255, 0);}
+    50%{ background-color: red; width: 500px;}
+
+    /* termina no azul com 200px  de largura */
+    100%{background-color: blue; width: 200px;}
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    animation-name: changeColor;
+    animation-duration: 3s;
+    /* Duracao */
+    animation-delay: 1s;
+    /* Tempo de espera 10 segundos antes de execultar */
+    animation-iteration-count: 1;
+    /* repete 5 vezes a mesma coisa */
+    animation-direction:alternate;
+    animation-fill-mode: forwards;
+}
+
+</style>
+<body>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "node": "^17.4.0",
+    "pg": "^8.7.1"
+  },
+  "name": "2-aprendendo-usar-nodejs-psql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

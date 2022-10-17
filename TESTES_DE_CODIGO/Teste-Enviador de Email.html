@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviador de Email</title>
+    <style>
+        :root{
+
+            --size:150px;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+
+            margin: auto;
+            padding: 3%;
+            background-color: rgb(103, 199, 7);
+            border: 3px solid rgb(88, 172, 4);
+            width: 320px;
+            height: auto;
+
+            font-size: 19px;
+            color:cornsilk;
+            
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            
+        }
+        
+        .inputStilo{
+            padding: 8px;
+            margin: 10px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .tamanho{
+            width:var(--size);
+            height:var(--size);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <h2>Enviador de EMAIL</h2>
+       
+            
+            <input class="inputStilo" id='assunto' type="text" placeholder="Assunto do Email" maxlength="30">
+        
+            
+            <textarea class="inputStilo tamanho" id='msg' placeholder="Digite Sua mensagem">Corpo</textarea>
+        
+            
+            <input class="inputStilo"   id='nome' type="text" placeholder="Seu nome">
+        
+        <button class="inputStilo"  onclick="inputValor()">Pegar</button>
+        <div id="linkEnvio"></div>
+        <!-- <a href="mailto:?subject=Assunto do email&amp;body=Olá,%0D%0A%0D%0A[corpo do email]%0D%0A%0D%0AAtenciosamente,%0D%0A[nome do usuário]">Envie seu email!</a> -->
+    </div>
+
+    <script>
+        const assunto = document.querySelector('#assunto');
+        const msg = document.querySelector('#msg');
+        const nome = document.querySelector('#nome');
+        const linkEmail = document.querySelector('#linkEnvio');
+        const container = document.querySelector('#container');
+
+        function inputValor() {
+
+            console.log(assunto.value);
+            console.log(msg.value);
+            console.log(nome.value);
+
+            linkEmail.innerHTML = `<a href="mailto:camilia@email.com?subject=${assunto.value}&amp;body=Olá,%0D%0A%0D%0A${msg.value}%0D%0A%0D%0AAtenciosamente,%0D%0A${nome.value}">Envie seu email!</a>`;
+
+
+
+            //document.write(`<a href="mailto:?subject=${assunto.value}&amp;body=Olá,%0D%0A%0D%0A${msg.value}%0D%0A%0D%0AAtenciosamente,%0D%0A${nome.value}">Envie seu email!</a>`)
+            //window.print(container);
+        }
+    </script>
+</body>
+
+</html>

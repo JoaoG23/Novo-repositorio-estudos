@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpinnerLoad</title>
+</head>
+<style>
+*{
+    margin: 0;
+}
+    .containerSpinner {
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       width: 7em;
+       height: 7em;
+    }
+
+    .fundoCirculoSpinner{
+
+        display: inline-block;
+
+        box-shadow: 10px 10px  100px rgba(188, 31, 212, 0.279);
+        height:7em;
+        width: 7em;
+        background-image:linear-gradient( rgb(138, 52, 218), rgb(164, 83, 239));
+        border-radius: 50%;
+        animation-name: rodandoSpinnerLoading;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+        animation-duration: 1s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        overflow: hidden;
+        
+    }
+    .meioSpinner{
+        
+        position: fixed;
+        top: 1em;
+        /* left: .5em; */
+        /* right: 0px; */
+        transform: translateY(-10px);
+        /* bottom: 0px; */
+        z-index: 1;
+
+        border-radius: 50%;
+        background-color: rgb(255, 255, 255);
+        height: 6.3em;
+        width: 6.3em;
+        box-shadow: 10px 10px  100px rgba(188, 31, 212, 0.39);
+    }
+    
+    .cursorSpinner{      
+        
+        height: 3em;
+        width: 7em;
+        background-color: rgb(218, 52, 215);
+    }
+    
+    @keyframes rodandoSpinnerLoading {
+        0%{ transform: rotate(0deg); }
+        100%{ transform: rotate(360deg); }
+    }
+
+</style>
+<body>
+    <div class="containerSpinner">
+        
+        <div class="fundoCirculoSpinner">
+            <div class="cursorSpinner"></div>
+            <div class="meioSpinner">
+
+            </div>
+        </div>
+    </div>
+    Carregando ....
+</body>
+</html>

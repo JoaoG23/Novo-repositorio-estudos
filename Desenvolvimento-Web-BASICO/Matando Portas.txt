@@ -1,0 +1,15 @@
+-----Para achar todas as portas RODANDO ------
+digite: netstat -a -n -o 
+
+---- Acha porta especifica -----
+digite: netstat -a -n -o | findstr numero_da_porta
+
+EX:
+digite: netstat -a -n -o | findstr 2001
+---------------------------------------------
+0.0.0.0:2001           0.0.0.0:0      LISTENING       17636
+
+------Para Matar a porta 
+Taskkill /PID numero_do_pid /F
+Ex:Taskkill /PID 17636 /F
+

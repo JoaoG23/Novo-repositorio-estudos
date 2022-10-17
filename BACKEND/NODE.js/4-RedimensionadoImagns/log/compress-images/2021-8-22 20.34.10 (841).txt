@@ -1,0 +1,8 @@
+File from: [./temp/images_outInput.png]
+
+File to: [./compress/images_outInput.png]
+
+Compression algorithm: [pngquant]
+
+Description: Error: Command failed: C:\Users\joaog\OneDrive\Área de Trabalho\Estudo\BACKEND\NODE.js\4-RedimensionadoImagns\node_modules\pngquant-bin\vendor\pngquant.exe --quality=20-50 -o ./compress/images_outInput.png ./temp/images_outInput.png
+  error: cannot open temp\images_outInput.png for reading

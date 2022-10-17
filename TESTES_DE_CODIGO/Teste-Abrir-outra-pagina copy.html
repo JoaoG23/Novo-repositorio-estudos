@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcão que abre outra pagina no mesmo local </title>
+    <style>
+        body{
+            background-color: rgb(101, 136, 66);
+            border-radius: 10px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px; 
+            color: rgb(226, 224, 213);
+        }
+    </style>
+</head>
+<body>
+    <div class="teste">
+        
+        <h1>Abre outro documento</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisi
+            ing elit. Prov
+            ident alias od
+            it repellat facilis saepe n
+            umquam obcaecati, nam aliquid ipsa reiciendis? Eius ex quisquam dolor voluptatum nihil dignissimos aliquam illo sunt?</p>
+        <button onclick="abrirOutra()">Abre outro conteudo na mesma pagina</button>
+    </div>
+    <script>
+        function abrirOutra(){
+            
+            let sty = document.getElementsByClassName('teste');
+            console.log(sty[0]);
+
+
+            
+
+            // document.open('pagina.html');
+            // document.write(`<div class='${sty[0]}'>`);
+            //     document.write("<h2>Hello world!</h2>");
+            //     document.write("<p>I am a fish</p>");
+            //     document.write("<p>The number is 42</p>");
+            // document.write('</div>');
+                
+        }
+
+    </script>
+</body>
+</html>

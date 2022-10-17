@@ -1,0 +1,21 @@
+/*
+BABEL = e um transpilador para converte 
+um codigo gerado em uma determinada versao 
+para um codigo reconhecido por todos os 
+navegadores 
+*/
+
+/**
+ * Ex: ES6 foi introduziu o conceito de 
+ * funcao anonima porem no ES5
+ * 
+ */
+
+ FUNCIONAMENTO DO REACT E SEUS COMPONENTES
+1- UM COMPONENTES e um conjunto de elementos
+eu quero juntar eles para se torna uma coisa 
+em uma tela criado com react e um cojunto de
+varios COMPONENTES.
+
+comando para Setar REACT
+npx create-react-app nome_do_projeto

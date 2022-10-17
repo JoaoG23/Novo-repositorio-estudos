@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- O ng-app= deve ser igual ao angular.module Ex:helloWorld -->
+<html lang="pt-br" ng-app="helloWorld">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hello World</title>
+ <script src="./angular-1.8.2/angular.js"></script>
+<script>
+
+        // ========Conceito 
+        // Controle = onde irá está as funções para serem execultadas
+        // Scope = Fará o intermedio entre o scope e a VIEW 
+        // View = Onde estará o nosso HTML
+        
+        // Ex: Restaurante 
+        // 1- Controle = Cozinheiro =  O Cozinheiro não conhece o cliente
+        // 2 - Scope = Garçon
+        // 3 -  View = Cliente =  O cliente não conhece o cozinheiro
+        // ==============Pratica
+        
+        //     Na verdade o angular são modulos Ex:angular.module("namoe",[])
+        //     Controle e igual a angular.module().controller("helorconrole",function(){})
+        //     A Função irá rodar a aplicação e dentro dela irá entra a scope Ex:Function($scope)
+
+        angular.module("helloWorld",[]);
+        angular.module("helloWorld").controller("helloCtrl",function ($scope) {
+            $scope.message ="Amor de Mãe";
+        });
+</script>        
+
+
+
+    <title>helo world</title>
+</head>
+<body>
+    <div ng-controller="helloCtrl">{{message}}</div>
+</body>
+</html>

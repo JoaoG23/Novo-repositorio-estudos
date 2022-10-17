@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner - Atividade</title>
+    <style>
+        main{
+            margin: auto;
+            
+        }
+        img {
+            width: 250px;
+        }
+
+        .banner {
+            width: 450px;
+            height: 250px;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 20px;
+
+            background-size: 200% 200%;
+
+        }
+
+        .yourAnimation {
+            animation: changeColor 4s linear infinite alternate;
+        }
+
+        .yourColorNode {
+
+            background-image: linear-gradient(to bottom right,
+                    rgb(145, 218, 145) 0%, rgb(119, 221, 116) 40%, rgb(77, 163, 77) 60%, rgb(84, 136, 32) 100%);
+        }
+        .yourColorAngular {
+
+            background-image: linear-gradient(to bottom right,
+                    rgb(253, 234, 181) 0%, rgb(212, 124, 112) 40%, rgb(167, 54, 45) 60%, rgb(219, 35, 22) 100%);
+        }
+        .yourColorHtml {
+
+            background-image: linear-gradient(to bottom right,
+                    rgb(231, 239, 243) 0%, rgb(179, 179, 180) 40%, rgb(141, 137, 129) 60%, rgb(67, 77, 57) 100%);
+        }
+
+
+        @keyframes changeColor {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 100% 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="banner yourAnimation yourColorNode">
+            <img src="./nodejs_original_wordmark_logo_icon_146412.svg">
+        </div>
+        <div class="banner yourAnimation yourColorAngular">
+            <img src="./file_type_angular_icon_130754.svg">
+        </div>
+        <div class="banner yourAnimation yourColorHtml">
+            <img src="./file_type_html_icon_130541.svg">
+        </div>
+    </main>
+</body>
+
+</html>

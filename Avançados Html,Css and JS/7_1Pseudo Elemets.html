@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p::first-letter{
+            color:rgb(3, 109, 3);
+            font-size: 50px;
+        }
+        p::first-line{
+            color:teal;
+        }
+        li{
+            list-style: none;
+        }
+        li::before{
+                        /* or after */
+            /* ---IMPORTANTE:Content = se refere ao conteudo serve para fazer tootip---- */
+            
+            /* content:"B";
+            color:blue; */
+            /* or after */
+            /* content:"B";
+            color:blue; */
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url(./assets/backMoney.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        p::selection{
+            background-color: coral;
+            color:crimson;
+        }
+    </style>
+</head>
+<body>
+    <h1>Title</h1>
+    <p>Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer Texto qualquer </p>
+
+    <ul>
+        <li>Iten 1</li>
+        <li>Iten 2</li>
+        <li>Iten 3</li>
+        <li>Iten 4</li>
+        <li>Iten 5</li>
+    </ul>
+</body>
+</html>

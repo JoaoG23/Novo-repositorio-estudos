@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .controles{
+            margin: 20px;
+            
+        }
+        .btn{
+            background-color:cornflowerblue;
+            border-radius: 60%;
+        }
+        .btn:hover{
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio" >
+        <source src="./assets/Carolina Lima - Sol De Primavera.mp3">
+    </audio>
+    <nav class="controles">
+        <img class="btn" onclick="play()" src="./Butons/play-circle.svg">
+        <img class="btn" onclick="voltar()" src="./Butons/skip-back.svg">
+        <img  class="btn" onclick="avanca()" src="./Butons/skip-forward.svg">
+        <img  class="btn" onclick="stop()" src="./Butons/stop.svg">
+    </nav>
+
+    <script>
+        let audio = document.getElementById("audio");
+        function play(){
+            audio.play();
+        }
+
+        function stop(){
+            audio.pause();
+            audio.currentTime =  0;
+        }
+
+        function avanca(){
+            audio.playbackRate += 0.2;
+        }
+        function voltar(){
+            audio.playbackRate -=0.2;
+        }
+    </script>
+</body>
+</html>

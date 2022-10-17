@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascara CPF</title>
+</head>
+<body>
+    <form>
+       <input type="text"
+       id="inputFiltrado">
+    </form>
+    <script>
+        const inputFiltrado = document.querySelector("#inputFiltrado");
+        inputFiltrado.addEventListener("keypress", function(evento){
+
+            // Se der True passa a funcao
+            // Se der false bloquea caracter
+            //checar(evento)
+            if (!checar(evento)) {
+                
+                evento.preventDefault();
+            }
+        });
+
+        function checar(evento){
+
+            // Metodo char code
+            const caractere = String.fromCharCode(evento.keyCode);
+            // console.log(caractere);
+            // console.log(evento.keyCode);
+
+            const padraoPermitido = '[a-zA-Z0-9]';
+            if( caractere.match(padraoPermitido) ){
+                console.log(caractere);
+                return true;
+            } 
+        }
+    </script>
+</body>
+</html>

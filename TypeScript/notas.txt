@@ -1,0 +1,24 @@
+===TYPESCRIPT ===
+Descricao               Comando
+1- Iniciar o projeto :tsc --init
+
+2- Vá em Tsconfig.json 
+3- Mude o rootDir caminho do arquivo ts
+Ex:  "rootDir": "./src",   
+
+4- Diretorio de saida mude para
+"outDir": "./dir/js",
+
+5- Digite tsc para conpilar
+
+6- Para compilacao automatica Digite
+tsc -w
+
+
+REACT COM TYPESCRIPT
+npx create-react-app view --template typescript 
+
+para usar o style components
+USAR COMO TYPESCRIPT Styled-components
+
+npm install --save @types/styled-components

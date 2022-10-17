@@ -1,0 +1,77 @@
+
+*{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+
+}
+body{
+    
+    background-color: rgb(250, 240, 255);
+}
+.botao{
+    margin: 10px;
+ background-image: linear-gradient(to bottom right, rgb(104, 4, 192), rgb(171, 36, 255), rgb(175, 40, 198));
+ border-radius: 10px;
+color:rgb(251, 244, 254);
+padding: 10px;
+border: none;
+
+
+background-size: 200% 200%;
+font-size: 18px;
+box-shadow: 2px 2px 4px rgba(153, 71, 162, 0.311);
+
+/* background-position: right bottom ; */
+}
+.botao:hover{
+    background-image:linear-gradient(white,rgb(195, 194, 194));
+    color: blueviolet;
+    transition:0.5s ease-in ;
+    animation-name: selecionado;
+animation-duration: 1s;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+
+
+}
+
+.quadro {
+   margin: 20px;
+}
+.card{
+    box-shadow: 2px 2px 4px rgba(153, 71, 162, 0.311);
+    background-color: white;
+    color:rgb(142, 57, 221);
+    border-radius: 15px ;
+    padding: 20px;
+
+
+    transition:0.5s ease-in ;
+    animation: aparecerSuaveMente 0.5s ease 0s ;
+}
+
+.header{
+    /* background-image: linear-gradient(to bottom right, rgb(123, 6, 196), rgb(183, 15, 255)); */
+    background-color: blueviolet;
+   color:white;
+   display: flex;
+   justify-content:space-between;
+   padding: 10px;
+   border: none;
+   /* width: 50vw; */
+   /* height: 80px; */
+   box-shadow: 2px 2px 4px rgba(153, 71, 162, 0.311);
+}
+@keyframes aparecerSuaveMente {
+    0% { transform: translateX(-100vw);}
+    100% { transform: translateX( 0vw); }
+}
+
+@keyframes selecionado {
+    
+    0% { background-position: 0 0;}
+    100% { background-position: 80% 80%;}
+
+}

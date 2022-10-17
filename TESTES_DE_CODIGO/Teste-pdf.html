@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste export Pdf</title>
+</head>
+    
+<body>
+    <div id="dados">
+        <h1>TEste</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quis eius itaque ea necessitatibus, corrupti explicabo at, quo recusandae officia possimus libero distinctio, dolorum veritatis! Numquam tempora architecto doloremque ea.</p>
+    </div>
+    <h1 onmouseover="exporta()">Clique aqui</h1>
+    <script>
+        function exporta(){
+            let dados = document.getElementById('dados');
+            window.open('','export','width=300px, height=300px');
+            
+            window.document.open.writeln(dados);
+            window.document.open.innerHTML = ``;
+            
+            
+
+        }
+    </script>
+</body>
+</html>

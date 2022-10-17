@@ -1,0 +1,155 @@
+-- ************ LIMPANDO TABELA  ********
+ TRUNCATE TABLE TBCREDENCIAL_CADASTRADAS,
+	TB_USUARIOS;
+
+-- ******** ADICIONADO COLUNAS DA CHAVE ESTRANGEIRA ********
+
+ALTER TABLE TB_USUARIOS ADD COLUMN CRENDENCIAL_USUARIO VARCHAR(50) UNIQUE;
+
+
+ALTER TABLE TBCREDENCIAL_CADASTRADAS ADD COLUMN CREDENCIAL VARCHAR(50) UNIQUE;
+
+-- ******** ADICIONADO CHAVE ESTRANGEIRA 1 PARA ! TABELA FILHA ********
+
+ALTER TABLE TB_USUARIOS ADD
+FOREIGN KEY (CRENDENCIAL_USUARIO) REFERENCES TBCREDENCIAL_CADASTRADAS(CREDENCIAL);
+
+-- ******** INSERINDO USUARIOS ********
+
+INSERT INTO TB_USUARIOS
+VALUES (DEFAULT, 'foto', 'Luiza','Sonia','RG','111.111.111-23','2199999-9999','email@email.com')---- ATENCAO + PRIMEIRA CREDENCIAL DEPOIS _ Usuario Crendencia
+INSERT INTO TBCREDENCIAL_CADASTRADAS VALUES (DEFAULT, 'ATIVA', '2022-02-20','08:31','2022-02-20','08:31','Entrada','G888');
+
+
+UPDATE TB_USUARIOS
+SET CRENDENCIAL_USUARIO = 'G888'
+WHERE ID_USUARIO = 5;
+
+-- ************** DANDO JOIN TUDO ******************
+
+SELECT *
+FROM TB_USUARIOS AS U
+LEFT JOIN TBCREDENCIAL_CADASTRADAS AS CR ON U.CRENDENCIAL_USUARIO = CR.CREDENCIAL;
+
+-- ************** DANDO JOIN Em Campos especificos ******************
+
+SELECT U.ID_USUARIO,
+	U.NOME_USUARIO,
+	U.SOBRENOME_USUARIO,
+	U.TIPO_DOCUMENTO_USUARIO,
+	U.NUMERO_DOCUMENTO_USUARIO ,
+	CR.CREDENCIAL,
+	CR.SITUACAO_CREDENCIAL,
+	CR.DATA_INICIAL_CREDENCIAL,
+	CR.HORA_INICIAL_CREDENCIAL,
+	CR.DATA_FINAL_CREDENCIAL,
+	CR.HORA_FINAL_CREDENCIAL,
+	CR.DIRECAO
+FROM TB_USUARIOS AS U
+LEFT JOIN TBCREDENCIAL_CADASTRADAS AS CR ON U.CRENDENCIAL_USUARIO = CR.CREDENCIAL;
+
+
+CREATE VIEW VW_DADOS_USUARIO_CREDENCIADO AS
+SELECT U.ID_USUARIO,
+	U.NOME_USUARIO,
+	U.SOBRENOME_USUARIO,
+	U.TIPO_DOCUMENTO_USUARIO,
+	U.NUMERO_DOCUMENTO_USUARIO ,
+	CR.CREDENCIAL,
+	CR.SITUACAO_CREDENCIAL,
+	CR.DATA_INICIAL_CREDENCIAL,
+	CR.HORA_INICIAL_CREDENCIAL,
+	CR.DATA_FINAL_CREDENCIAL,
+	CR.HORA_FINAL_CREDENCIAL,
+	CR.DIRECAO
+FROM TB_USUARIOS AS U
+LEFT JOIN TBCREDENCIAL_CADASTRADAS AS CR ON U.CRENDENCIAL_USUARIO = CR.CREDENCIAL;
+
+
+CREATE FUNCTION SP_INSERIR_USUARIO(DADOS_JSON text, RETORNA_SAIDA text) 
+RETURNS LONGTEXT 
+DECLARE 
+	valor_nome varchar(80) :=  '';
+	valor_sobrenome varchar(80) :=  '';
+	valor_tipo_documento varchar(50) = '';
+	valor_numero_documento varchar(20) = '';
+	valor_crendencial varchar(50) = '';
+	valor_data_inicial_credencial = '';
+	valor_time_inicial_credencial = '';
+	valor_data_final_credencial = '';
+	valor_time_final_credencial = '';
+	
+BEGIN
+	for 
+END 
+LANGUAGE PLPGSQL
+
+
+-- ===== INSERIR dado Tipo Json ======
+
+CREATE OR REPLACE FUNCTION public.salvar(
+	data json)
+    RETURNS void
+    LANGUAGE 'sql'
+    COST 100
+    VOLATILE 
+AS $BODY$
+INSERT INTO "tbcredencial_cadastradas" SELECT * FROM json_populate_record(null::"tbcredencial_cadastradas", $1);
+
+$BODY$;
+
+-- ===== INSERINDO dados em JSON ======
+select * from tbcredencial_cadastradas;
+	SELECT salvar('{"id_credencial":"10",
+	"situacao_credencial":"ATIVA",
+	"data_inicial_credencial":"2022-02-20",
+	"hora_inicial_credencial":"08:31:00",
+	"data_final_credencial":"2022-02-20",
+	"hora_final_credencial":"08:31:00",
+	"direcao":"Entrada",
+	"credencial":"33GR"}');
+
+
+
+
+-- ====== Aprendendo e criando na pratica a estrutura JSON ======
+select procedure_adicionar_crendencial('{"id_credencial":"1",
+"situacao_credencial":"ATIVA",
+"data_inicial_credencial":"2021-12-20",
+"hora_inicial_credencial":"11:01:00",
+"data_final_credencial":"2022-08-20",
+"hora_final_credencial":"12:31:00",
+"direcao":"Entrada",
+"credencial":"15GR"}')
+
+select * from tbcredencial_cadastradas;
+
+-- - 1 transformando a tabela em json sem nome da linha -----
+select row_to_json(row(situacao_credencial,
+				   data_inicial_credencial,
+				   hora_inicial_credencial,
+				   data_final_credencial,
+				  hora_final_credencial,
+				  direcao,
+				  credencial)) from tbcredencial_cadastradas;
+				  
+-- - 2 tabela em json com nome da linha -----
+explain
+select row_to_json(vw_dados_usuario_credenciado) from vw_dados_usuario_credenciado;
+
+-- - 3 transformando a tabela em array dados json todas as linhas -----
+
+
+select array_to_json (array_agg(row_to_json(tbcredencial_cadastradas))) from tbcredencial_cadastradas;
+select array_to_json (array_agg(row_to_json(tb_usuarios))) from tb_usuarios;
+select array_to_json (array_agg(row_to_json(vw_dados_usuario_credenciado))) from vw_dados_usuario_credenciado;
+
+
+insert into tb_usuarios (nome_usuario,
+sobrenome_usuario,tipo_documento_usuario ,
+ numero_documento_usuario ,
+  crendencial_usuario,email_usuario) values ('Lucas','Jamarino Barbosa','CPF','333390992122','35GR','lucas@email.com');
+
+
+
+

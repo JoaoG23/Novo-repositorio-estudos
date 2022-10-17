@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerar Pdf</title>
+  <style>
+    *{
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gerando PDF em arquivo para download</h1>
+
+  <div id="dados" download>
+    <p>Nome: Joao    Idade: 23   Altura: 1.34</p>
+    <p>Nome: Joao    Idade: 23   Altura: 1.34</p>
+    <p>Nome: Joao    Idade: 23   Altura: 1.34</p>
+    <p>Nome: Joao    Idade: 23   Altura: 1.34</p>
+    <p>Nome: Joao    Idade: 23   Altura: 1.34</p>
+    <p>Nome: Joao    Idade: 23   Altura: 1.34</p>
+    <p>Nome: Joao    Idade: 23   Altura: 1.34</p>
+    <p>Nome: Joao    Idade: 23   Altura: 1.34</p>
+
+
+  </div>
+  <div>
+    <input type="button" value="IMPRIMIR" >
+  </div>
+
+  <script>
+    function gerar_pdf() {
+      let buscaDados = document.querySelector('#dados').innerHTML;
+
+
+      let janela = window.open('paginaDados.html','Spinner','width=auto, height=auto',"_top");
+
+      
+      console.info(buscaDados);
+      janela.document.write('<a>');
+      janela.document.write(buscaDados);
+      janela.document.write('</a download>');
+
+
+      
+
+      // let downloading = browser.downloads.download({
+      //   url : downloadUrl,
+      //   filename : 'my-image-again.png',
+      //   conflictAction : 'uniquify'
+      // });
+
+
+    }
+  </script>
+</body>
+</html>

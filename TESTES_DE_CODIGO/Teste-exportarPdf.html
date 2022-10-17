@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exportando arquivos Xls</title>
+  <script>
+  var testeImpresao = [
+     { codigo: '01',
+       nome: 'Pastilha freio uno',
+       descricao: 'Serve até ano 2000'
+     },
+     { codigo: '02',
+       nome: 'Pastilha freio gol',
+       descricao: 'Server para 1ª 2ª e 3ª geração'
+     }];
+   
+  var _gerarCsv = function(){
+       
+      var csv = 'codigo, nome, descricao\n';
+   
+      testeImpresao.forEach(function(row) {
+              csv += row.codigo;
+              csv += ','+ row.nome;
+              csv += ','+ row.descricao;
+              csv += '\n';
+      });
+      
+    
+      var documentoEmGerancao = document.createElement('a'); //Para criar elemento na tela a moda antiga. https://www.w3schools.com/jsref/met_document_createelement.asp
+      documentoEmGerancao.href = 'data:application/pdf,' + encodeURI(csv); //encode = Tranforma em dados de query; https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
+      documentoEmGerancao.target = '_blank';// Se ele vai para outra tela o fica na mesa
+      documentoEmGerancao.appendChild('<p>Ola teste escrita no documento</p>');
+      documentoEmGerancao.download = 'testeImpresao.pdf';
+      documentoEmGerancao.click();
+  };
+  
+  </script>
+</head>
+<body>
+<button onclick="_gerarCsv()">Export</button>
+
+</body>
+</html>

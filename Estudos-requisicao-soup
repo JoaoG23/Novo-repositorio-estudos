@@ -1,0 +1,217 @@
+// *****************Inicializacao Materialize ***************
+
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.collapsible');
+  var instances = M.Collapsible.init(elems);
+});
+
+
+//----- Inicializacao -------
+// Criar navbar para todas as pagina
+let localOndeEstaNavbar = document.querySelector('#rootSideBar');
+window.addEventListener ('load', () => {  CriarNavBar ( localOndeEstaNavbar ) });
+
+
+// ***************** SERVICES ****************
+
+
+// ___________________TESTE _________________
+const testeValores = (valorASerTestado) => {
+  const pegarValor = document.querySelectorAll(`${valorASerTestado}`).NodeList[0];
+  console.log(pegarValor);
+ 
+}
+
+// ------------ Modificadoras de elementos na tela ------
+function alterarClassName(seletorElemento, classeAntiga, classeNova) {
+  const elementoAmodificar = document.querySelector(`${seletorElemento}`)
+  elementoAmodificar.classList.remove(`${classeAntiga}`);
+  elementoAmodificar.classList.add(`${classeNova}`);
+}
+
+
+ function ExibirElementoSeNecessario (seletorSelecionado, elementoASerModificado, valor1Comparacao) {
+    let valorSelecionado = seletorSelecionado.options[seletorSelecionado.selectedIndex].value;
+  
+    if (valorSelecionado == valor1Comparacao) {
+      alterarClassName(elementoASerModificado, 'largura-0', 'largura-100')
+    } else {
+      
+      alterarClassName(elementoASerModificado, 'largura-100', 'largura-0')
+    }
+ }
+
+
+ function Jmascara (elementoRecebedor, itensDaMascara ) {
+
+    let caracteresSeparadores = itensDaMascara;
+    let textoParaMascara = elementoRecebedor;
+    if (textoParaMascara.value.length == 3 || textoParaMascara.value.length == 7) {
+      textoParaMascara.value += caracteresSeparadores;
+  
+    } else if (textoParaMascara.value.length == 11) {
+      textoParaMascara.value += caracteresSeparadores;
+  
+    }
+  }
+
+  function CriarNavBar ( root )  {
+
+    let resultadoTemplate = `
+            <div class="sidenav sidenav-fixed grey darken-4 teal-text text-lighten-1">
+            <a href="#" class="brand-logo"></a>
+            <h3 class="center">Access Controller</h3>
+            <ul id="nav-mobile" class=" hide-on-med-and-down ">
+              <li><a class="waves-effect white-text waves-teal" href="./index.html">GPIO</a></li>
+              <li><a class="waves-effect white-text waves-teal" href="./audio.html">Audio</a></li>
+              <li><a class="waves-effect white-text waves-teal" href="./coletor.html">Coletor</a></li>
+              <li><a class="waves-effect white-text waves-teal" href="./displayled.html">Display LCD</a></li>
+              <li><a class="waves-effect white-text waves-teal" href="./painelmsgsend.html">Painel de Mensagens</a></li>
+              <li><a class="waves-effect white-text waves-teal" href="./impressora.html">Impressora</a></li>
+              <li><a class="waves-effect white-text waves-teal" href="./portaSerial.html">Porta Serial</a></li>
+            </ul>
+          </div>`;
+
+    root.innerHTML = resultadoTemplate;
+
+  }
+
+// ------------ Modificadoras de elementos na tela ------
+
+
+
+///******************** Manipuladoras de dados ******************* */
+ const extraiValoresTipoValueEArmazena = ( arrayEstoque, listaDeElemento ) => {
+    
+            for (const input of listaDeElemento) {
+              arrayEstoque.push(input.value);          
+        }
+
+        console.log(arrayEstoque);
+ }
+
+ const extraiValoresTipoCheckboxEArmazena = ( arrayEstoque, listaDeElemento , opcionalConversor ) => {
+          const conversorDados = opcionalConversor;
+ 
+            for (const check of listaDeElemento) {
+              arrayEstoque.push(conversorDados(check.checked));
+            
+        }
+        console.log(arrayEstoque);
+ }
+
+ const converteTrueOuFalsePara0ou1 = ( boleano ) => {
+   if(boleano === true) {
+      return boleano = '1';
+   } else {
+    return boleano = '0';
+   }
+   
+ }
+
+ const exibeResultadosHTML = ( elementoQueIraExibirResultado ,valoresAdquiridos ) => {
+  const valorParaExibir =  valoresAdquiridos;
+  const exibidorDeResultados = document.querySelector(`${elementoQueIraExibirResultado}`);
+  exibidorDeResultados.innerHTML += `<p>${valorParaExibir}<p>`;
+}
+
+const retiraCaracteres = (valor,caractere) => valor.replace(caractere,'');
+
+
+///******************** Manipuladoras de dados ******************* */
+
+///******************** Chamada Requisiçoes  ******************* */
+
+   function chamadaAjaxSOAP( inputEnvioRequisicao , configChamada ) {
+
+    const protocolo = configChamada.protocolo;
+    const host = configChamada.host;
+    const port = configChamada.port;
+    const path = configChamada.path;
+    const envelopeRequisicao = inputEnvioRequisicao;
+
+    
+  let xmlhttpSOAP = new XMLHttpRequest();
+  xmlhttpSOAP.open('POST', `${protocolo}${host}${port}${path}`, true);
+  console.info(`O seu endpoint é: ${protocolo}${host}${port}${path}`);
+
+  xmlhttpSOAP.onreadystatechange =  ()  => {
+      if (xmlhttpSOAP.readyState == 4 && xmlhttpSOAP.status == 200) {
+          console.info(xmlhttpSOAP.response);
+
+          exibeResultadosHTML('#respostaCmd' , xmlhttpSOAP.response );
+      }
+  };
+
+  xmlhttpSOAP.setRequestHeader('Content-Type', 'text/xml');
+  xmlhttpSOAP.send(envelopeRequisicao);
+}
+
+
+
+
+
+
+
+
+
+
+function indexController() {
+    try {
+        // --- Receber Valores -----
+        const inputs = document.querySelectorAll('input[type=text],[type=number]');
+        const interruptores = document.querySelectorAll('input[type=checkbox]');
+
+        // ---  Estoques de Valores -----
+        let arrayDeValoresInputs = [];
+        let arrayDeValoresInterruptores = [];
+
+        // ----Extrair os valores e armazena no arrays Acimas------
+        extraiValoresTipoValueEArmazena(arrayDeValoresInputs, inputs);
+        extraiValoresTipoCheckboxEArmazena(arrayDeValoresInterruptores, interruptores , converteTrueOuFalsePara0ou1);
+        
+        //_ Inserer na requisicao os dados 
+        const templateGpio =
+            `<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:services.accesscontroller">
+                <soapenv:Header/>
+                <soapenv:Body>
+                <urn:sendCmd soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+                    <endereco_ip xsi:type="xsd:string">${arrayDeValoresInputs[1]}</endereco_ip>
+                    <codigo_cmd xsi:type="xsd:string">${arrayDeValoresInputs[2]}</codigo_cmd>
+                    <parametros_cmd xsi:type="xsd:string">{"REMOTE_GPIO_PULSE":${arrayDeValoresInterruptores[0]},"REMOTE_GPIO_NUMBER":${arrayDeValoresInputs[3]},"REMOTE_GPIO_SET_VALUE":${arrayDeValoresInterruptores[1]},"REMOTE_GPIO_MS_TIME":${arrayDeValoresInputs[4]}}</parametros_cmd>
+                    <prioridade xsi:type="xsd:int">0</prioridade>
+                    <tipo_execucao xsi:type="xsd:int">0</tipo_execucao>
+                </urn:sendCmd>
+                </soapenv:Body>
+            </soapenv:Envelope>`;
+
+            const configChamada = {
+                protocolo:'http://',
+                host:'192.168.0.177/',
+                port:'',
+                path:'WSAccessController/server.php?wsdl'
+              }
+              
+     chamadaAjaxSOAP(templateGpio , configChamada);
+
+    } catch (error) {
+        console.log('Erro na função indexController da página: '+ error)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

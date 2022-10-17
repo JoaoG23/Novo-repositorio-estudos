@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#eb445a" />
+    <style>
+        :root{
+            --roxo:#bd13df;
+        }
+        .roxo{
+            background-color: var(--roxo);
+            color: beige;
+        }
+        .roxo:hover{
+            color: rgb(86, 86, 86);
+        }
+    </style>
+    <title>Criando Alguns botoes</title>
+</head>
+<body>
+    <ion-app>
+        <ion-menu content-id="main-content" >
+          <ion-header >
+            <ion-toolbar color="success">
+              <ion-title>Menu</ion-title>
+            </ion-toolbar>
+          </ion-header>
+      
+          <ion-content color="success">
+            <ion-list color="success">
+              <ion-list-header color="success"> Navigate </ion-list-header>
+              <ion-menu-toggle auto-hide="false">
+                <ion-item button color="success">
+                  <ion-icon slot="start" name="home"></ion-icon>
+                  <ion-label> Home </ion-label>
+                </ion-item>
+              </ion-menu-toggle>
+            </ion-list>
+          </ion-content>
+        </ion-menu>
+      
+        <ion-page class="ion-page" id="main-content" >
+          <ion-header >
+            <ion-toolbar color="success">
+              <ion-buttons slot="start" >
+                <ion-menu-toggle>
+                  <ion-button>
+                    <ion-icon slot="icon-only" name="menu"></ion-icon>
+                  </ion-button >
+                </ion-menu-toggle >
+              </ion-buttons>
+              <ion-title >Header</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding" >
+
+            <!-- Default -->
+<ion-button>Default</ion-button>
+
+<!-- Anchor -->
+<ion-button href="#">Anchor</ion-button>
+
+<!-- Colors -->
+<ion-button color="primary">Primary</ion-button>
+<ion-button color="secondary">Secondary</ion-button>
+<ion-button color="tertiary">Tertiary</ion-button>
+<ion-button color="success">Success</ion-button>
+<ion-button color="warning">Warning</ion-button>
+<ion-button color="danger">Danger</ion-button>
+<ion-button color="light">Light</ion-button>
+<ion-button color="medium">Medium</ion-button>
+<ion-button color="dark">Dark</ion-button>
+
+<!-- Expand -->
+<ion-button expand="full">Full Button</ion-button>
+<ion-button expand="block">Block Button</ion-button>
+
+<!-- Round -->
+<ion-button shape="round">Round Button</ion-button>
+
+<!-- Fill -->
+<ion-button expand="full" fill="outline">Outline + Full</ion-button>
+<ion-button expand="block" fill="outline">Outline + Block</ion-button>
+<ion-button shape="round" fill="outline">Outline + Round</ion-button>
+
+<!-- Icons -->
+<ion-button>
+  <ion-icon slot="start" name="star"></ion-icon>
+  Left Icon
+</ion-button>
+
+<ion-button>
+  Right Icon
+  <ion-icon slot="end" name="star"></ion-icon>
+</ion-button>
+
+<ion-button>
+  <ion-icon slot="icon-only" name="star"></ion-icon>
+</ion-button>
+
+<!-- Sizes -->
+<ion-button size="large">Large</ion-button>
+<ion-button>Default</ion-button>
+<ion-button size="small">Small</ion-button>
+            <h1>Main Content</h1>
+            <p>Click the icon in the top left to toggle the menu.</p>
+          </ion-content>
+        </ion-page>
+      </ion-app>
+      <ion-menu-controller></ion-menu-controller>
+</body>
+</html>
