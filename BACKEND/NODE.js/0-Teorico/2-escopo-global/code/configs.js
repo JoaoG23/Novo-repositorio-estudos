@@ -1,0 +1,1 @@
+exports.maximo = 1000;
