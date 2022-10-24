@@ -12,7 +12,7 @@ public class App {
          // 1 - Modo um passando o tipo antes:
          int idadeModo1 = 3;
          float salModo1 = 1332.33f;
-        char letraModo1 = 'F';
+        char letraModo1 = 'F';// Um caracteres
         boolean casadoModo1 = false;
 
         /*

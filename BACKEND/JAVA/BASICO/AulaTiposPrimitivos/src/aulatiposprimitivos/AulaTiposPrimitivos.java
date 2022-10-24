@@ -8,6 +8,8 @@ public class AulaTiposPrimitivos {
         
         
         // Entrada de dados
+
+        // Ele não vem com entrada de dados por padrao
         Scanner teclado = new Scanner(System.in);
         
         System.out.println("Digite o nome do aluno");
