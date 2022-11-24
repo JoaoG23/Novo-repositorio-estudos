@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video de Aula</title>
+    <style>
+        .container{
+            position: relative;
+            border:2px solid crimson;
+            width:640px;
+            height: 360px;
+        }
+        .video{
+            width: 100%;
+        }
+        
+        .controles{
+            position: absolute;
+            /* background-color: rgb(252, 252, 252); */
+            top:0;
+            width: 100%;
+            height:100%;
+            text-align: center;
+            opacity: 0;
+        }
+        .controles:hover{
+            opacity: 1;
+            transition:1s;
+        }
+        .btn{
+            position: relative;
+            width:40px;
+            padding: 10px;
+            top: 100%;
+            transform: translateY(-100%);
+        }
+        .btn:hover{
+            background-color: rgb(211, 211, 211);
+            border-radius: 50%;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <video id="video1" class="video" src="./video/video_test.mp4"></video>
+
+        <div class="controles">
+
+            <img class="btn" onclick="retroc()" src="./Butons/decrease.svg">
+            <img class="btn" onclick="suceder()" src="./Butons/increase.svg">
+            <img class="btn" onclick="play()"  src="./Butons/play-circle.svg">
+            <img class="btn" onclick="voltar()" src="./Butons/skip-back.svg">
+            <img class="btn" onclick="avanca()" src="./Butons/skip-forward.svg">
+            <img class="btn" onclick="paravolta()" src="./Butons/stop.svg">
+
+        </div>
+    </div>
+    <script src="./JS/video_botao.js"></script>
+</body>
+</html>

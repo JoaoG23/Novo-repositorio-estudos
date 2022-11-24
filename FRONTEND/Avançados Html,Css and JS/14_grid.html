@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height: 400px;
+            color: honeydew;
+            display: grid;
+            padding: 10px;
+            background-color: gray;
+            /* grid-template-rows: 100px 200px;
+            /* grid-template-columns: 10% 100px auto; 
+            grid-template-columns: 1fr 3fr 1fr; */
+            grid-template:auto auto/auto auto auto ;
+            grid-row-gap: 50px;
+            grid-column-gap:50px ; 
+            /* grid-gap:10px 10px; */
+            justify-items: center;
+            align-items:center;
+            
+
+
+        }
+        .r1{
+            background-color: red;
+        }
+        .r2{
+            background-color: blueviolet;
+        }
+        .r3{
+            background-color: greenyellow;
+        }
+        .rect{
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="rect r1">1</div>
+        <div class="rect r2">2</div>
+        <div class="rect r3">3</div>
+        <div class="rect r1">4</div>
+        <div class="rect r2">5</div>
+        <div class="rect r3">6</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            background-color: darkkhaki;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="box" width="500px" height="500px">
+    </canvas>
+<script>
+    let tela = document.getElementById("box");
+    let ctx = tela.getContext("2d");
+
+    ctx.rect(200,200,200,200);
+
+    ctx.fillStyle ="blue";
+
+    // ctx.fillRect(50,50,300,100);
+    ctx.lineWidth= 10;
+
+    ctx.strokeStyle = "green";
+    // ctx.strokeRect(100,50,100,200);
+    
+    ctx.fill();
+    ctx.stroke();
+    
+    ctx.clearRect(30 ,30 ,50 ,50);
+    
+
+
+</script>
+
+</body>
+</html>

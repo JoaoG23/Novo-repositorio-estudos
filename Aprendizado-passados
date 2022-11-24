@@ -1,0 +1,194 @@
+------ NOTAÇÕES------Link 
+
+==================================
+----------------------------------------------------
+
+--------- COMANDO LEGAIS LINUX ------
+
+sudo cp /home/BANCO_ATUAL/* /home/EMPRESA_NOVA/ -R
+
+Permissao de pasta
+
+sudo chmod 777 nome_empresa. // Liberar permissoes na pasta
+
+sudo chmod +x nome_empresa // Liberar permissoes
+sudo bash create 
+
+
+
+
+------
+----- Problema de TOMCAT ------
+Erro : Tal ....
+Como resolver .....
+
+
+Erro : The superclass "javax.servlet.http.HttpServlet" was not found on the Java Build Path
+Como resolver:
+https://pt.stackoverflow.com/questions/94987/como-resolver-o-erro-the-superclass-javax-servlet-http-httpservlet-was-not-f
+
+Erro : Tal ....
+Como resolver .....
+
+Erro : 403 Access Denied on Tomcat 8 Manager App without prompting for user/password
+Como resolver:
+https://stackoverflow.com/questions/38551166/403-access-denied-on-tomcat-8-manager-app-without-prompting-for-user-password/41286101
+
+------------------------------------------------------
+TOMCAT ---
+
+ERRO: Ele nao quer inicia o serviço;
+Como resolver:
+https://support.eset.com/pt/kb5550-o-apache-tomcat-nao-esta-rodando-o-servico-nao-pode-ser-iniciado-como-eu-conserto-este-problema#:~:text=Usu%C3%A1rios%20Windows%20Server%202012%3A%20Clique,o%20e%20clicando%20em%20Iniciar.
+
+******************* COMANDO DE DEBUGS *******************
+	{
+
+1-Para criar um arquivo de logs na PASTA ONDE VOCE ESTA LOCALIZADO
+
+   sudo java -jar gerenciador_processo.jar start > strout2.log
+
+2- Abra outra SESSAO E Digite para realizar o comando 
+
+}
+
+
+--------------------------------------------------------
+NETSTAT PARA MATAR PORTAS
+
+EXIBIR ___________
+netstat -a -n
+
+LOCALIZAR ----
+netstat -a -n -o | findstr <porta>
+
+MATAR -------
+Taskkill /PID <pid> /F
+
+
+------------------------------------------------------------
+MYSQL-------
+Como entrar no mysql CLI 
+Digite: mysql -h localhost -u root -p
+fonte: https://qastack.com.br/programming/698914/how-can-i-access-the-mysql-command-line-with-xampp-for-windows#:~:text=digite%3A%20in%20mysql%20%2Du%20root,aos%20quais%20voc%C3%AA%20tem%20acesso.
+
+CRIAR UM USUARIO--------
+					nome usuario                             senha
+Digite : CREATE USER 'adm_empresa'@'localhost' IDENTIFIED BY 'empresa@empresa22';
+
+DAR PRIVILEGIOS --------------
+Digite : GRANT ALL PRIVILEGES ON *.* TO 'adm_empresa'@'localhost';
+
+ALTERANDO SENHA DO USUARIO ROOT
+
+Fonte: https://docs.saninternet.com/alterar-senha-root-mysql
+
+use mysql; UPDATE user SET Password=PASSWORD('SENHA_SAN') WHERE User='root'; FLUSH PRIVILEGES; exit;
+# mysql -u root mysql -p
+COMO IMPORTAR DUMP
+
+Fonte:https://dba.stackexchange.com/questions/244270/error-unknown-command-u-when-restoring-mysql-dump-on-windows
+Entre dentro da base de dados;
+DIGITE use (nome_da_base);
+MariaDB [theDBName]> SOURCE C:\\Users\\myUserName\\theDBName_data.dump
+
+Usei essa abaixo:
+MariaDB [theDBName]> SOURCE C:/Users/myUserName/theDBName_data.dump
+
+como ----- ver todos os usuarios
+
+SELECT * FROM mysql.user;
+
+
+
+
+PSQL---------------------------------------
+Passos para restaurar o backup
+
+Copiar arquivo dbsql.sql para pasta /tmp do servidor
+Acessar o servidor
+Entrar na pasta /tmp
+cd /tmp
+
+Executar o comando de Dump para o banco criado
+psql -f db_texplan.sql -U postgres -d dbmagna_demo
+
+
+
+ALTER SEQUENCE table_id_seq RESTART (numero_sequencia);
+
+------- DANDO UM DESCRIBE NO POSTGRESQL ANTIGO ---------
+ESCOPO:
+select column_name, data_type, character_maximum_length, column_default, is_nullable
+from INFORMATION_SCHEMA.COLUMNS where table_name = '<name of table>';
+
+EXEMPLO REAL:
+
+select * from INFORMATION_SCHEMA.COLUMNS where table_name = 'public.table';
+
+----------DROPANDO COLUNAS PSQL  -----------------------
+alter table tbtable 
+drop column saida;
+
+
+-----------PARA USAR O EMUN NO PSQL ---------------------------
+
+
+CREATE TYPE enum_direcao AS ENUM ('Entrada','Saida');
+
+alter table tbtable 
+add column direcao enum_direcao ;
+
+-----------------PSQL -------------
+
+Como dar select em campo nulos
+
+SELECT nome, empresa from Alunos a WHERE empresa is null;
+
+PARA DELETAR UM SERVICO NO WINDOWS =================================
+https://www.softdownload.com.br/como-remover-servicos-no-windows.html
+
+1- Entre no Cmd com administrador
+	em seguida 
+2 - Digite no pesquisa os servicos
+	Ache o nome do servico que voce quer deletar em
+	1- clique em propriedade 
+	2 - Copie o nome do servico em nome do servico
+	3 - Entre no Cmd com administrador
+	em seguida 
+	e digite na tela 
+	4 - sc delete <nome_do_servico> 
+	EX: sc delete tele1
+	Aparecera na tela isso.
+	[SC] DeleteService ÊXITO
+
+------------COMANDO LEGAIS DO CMD----------
+https://blog.betrybe.com/tecnologia/comandos-windows/
+
+
+
+Postgres 
+Como configurar Acesso a SSH ao Banco via Pgadmin
+
+----- 1
+Entre no servidor 
+e cd no Caminho Abaixo:
+
+/etc/postgresql/12/main/postgresql.conf
+
+2 --------- Descomente 
+a linha tirando o #
+tirando o localhost para asterico no local, como no exemplo abaixo:
+
+Antes: #listen_addresses = 'localhost'         # what IP address(es) to listen on;
+
+Depois: #listen_addresses = '*'         # what IP address(es) to listen on;
+
+Salve e saia dele;
+
+3- Em seguida entre digite o comando abana mesma pasta main.
+
+sudo systemctl restart postgresql
+
+4 - Va nesse caminho agora e altere postgresql
+nano /etc/postgresql/12/main/pg_hba.conf

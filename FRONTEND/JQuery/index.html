@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Esse é o Título H1</h1>
+
+    <h1 onclick="sumir()" class="titulo">Outro Título</h1>
+    <h3 class="titulo">Outro Titulo 2</h3>
+    <div class="titulo">Outro DIV</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+//    console.log( $("h1"))
+
+//$ = Selecionar Coisa no HTML
+//.hide() = esconde coisa na tela
+//.show() = mostra ao na tela escondido
+
+//Então na maioria das vezes o JQuery vai funcionar
+//
+//Selecionando algo Ex:("h1")e passando uma função Ex: .hide(); = $("h1").hide()
+
+
+//------------***-----
+
+//Para retirar o sifrou para não ter
+//conflito de com outros framework que usam sifrao($)
+//Use  Ex:o = $. noConflict();
+
+//Assim usando o no comflito o subistuito
+//Do sifrao e jQuery 
+
+//Ex: $.noConflict();
+// jQuery(".titulo").hide();
+
+// let jq =$.noConflict();
+// jq(".titulo").hide();
+
+// setTimeout(()=>{
+//     $(".titulo").show();
+// },2000)
+
+
+// $.noConflict();
+// jQuery(".titulo").hide();
+
+// setTimeout(()=>{
+//     $(".titulo").show();
+// },2000)
+
+
+//_____________________Com JavaScript____
+//Será que dá pra fazer com JS isso?
+
+//Vamos lá----------------
+function sumir(){
+    
+    document.querySelectorAll(".titulo").forEach(elemento =>{
+        elemento.style.display =  "none";
+        elemento.style.border = "10px solid green";
+    })
+}
+</script>
+</body>
+</html>

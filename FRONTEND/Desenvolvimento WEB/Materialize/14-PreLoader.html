@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-----Data inicial ---11-09-21--
+    -----Dia seguinte ----12-00-00---->
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ------------Bibliotecas e FrameWoks--------------- -->
+    <link type="text/css" rel="stylesheet" href="../lib/materialize/css/materialize.min.css"
+        media="screen,projection" />
+
+    <title>Preloads</title>
+</head>
+
+<body>
+<!-- -----=====Preload - progress Bar----- -->
+
+<div class="progress red">
+    <!-- =====Para colocar cor Ex:blue em progress--- -->
+    <!-- Dentro da Progress coloque class=""determinate e width -->
+
+    <div class="determinate blue" style="width: 20%"></div>
+</div>
+
+<!-- ----Indenterminate para sem tempo----- -->
+<div class="progress red">
+    <div class="indeterminate blue" style="width: 10%"></div>
+</div>
+
+<!-- ==========Circulares------- -->
+
+<!-- Temos big ,small ,medium -->
+<div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="../lib/materialize/js/materialize.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+    background-color: rgb(255, 206, 10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

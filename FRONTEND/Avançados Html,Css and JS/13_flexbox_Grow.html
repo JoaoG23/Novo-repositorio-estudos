@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .container{
+            display: flex;
+            align-items:center;
+
+            background-color: thistle;
+            height: 500px;
+            color:white;
+        }
+        .r1{
+            /* order: 2; para ordera os itens ja pre ordernado sobre um padrao 0 */
+            align-self:flex-start;
+            background-color: rgb(244, 255, 86);
+        }
+        .r2{
+            background-color: rgb(42, 241, 255);
+        }
+        .r3{
+            /* flex-shrink: 0; determinada se um elemento pode encolher ou não */
+            /* flex-grow: 0; se o elemento pode aumenta com forme o aumento da tela  */
+            background-color: rgb(255, 47, 193);
+        }
+        .rect{
+            width:200px;
+            height: 200px;
+        } 
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="rect r1">1</div>
+        <div class="rect r2">2</div>
+        <div class="rect r3">3</div>
+    </div>
+</body>
+</html>

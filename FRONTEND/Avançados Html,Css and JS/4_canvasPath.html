@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tela{
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="tela"  width="500px" height="500px">
+    </canvas>
+    <script>
+        let tela = document.getElementById("tela");
+        let ctx = tela.getContext("2d");
+
+        // ctx.beginPath();//E o caminho da linha
+        
+        // ctx.lineWidth = 4;
+        // ctx.strokeStyle = "green";
+        // ctx.moveTo(10,10);
+        // ctx.lineTo(200,200)
+        // ctx.stroke();
+        // ctx.beginPath();//E o caminho da linha
+        // ctx.lineWidth = 4;
+        // ctx.strokeStyle = "green";
+        // ctx.moveTo(10,10);
+        // ctx.lineTo(200,200)
+        // ctx.stroke();
+        // ctx.beginPath();//E o caminho da linha
+        // ctx.lineWidth = 4;
+        // ctx.strokeStyle = "red";
+        // ctx.fillStyle = "black";
+        // ctx.moveTo(10,10);
+        // ctx.lineTo(100,200)
+        // ctx.lineTo(50,200)
+        // ctx.closePath();
+        // ctx.stroke();
+        // ctx.fill();// a Ordem faz diferença!
+
+        //Circulo no Canvas
+
+        ctx.beginPath();
+        ctx.strokeStyle = "blue";
+        ctx.fillStyle = "yellow";
+
+        let x = 250;
+        let y = 250;
+        let raio = 100;
+        let inicio = 0;
+        let fim =  2 * Math.PI;
+
+        ctx.arc(x,y,raio,inicio, fim);
+        ctx.stroke();
+        ctx.fill();
+    </script>
+</body>
+</html>

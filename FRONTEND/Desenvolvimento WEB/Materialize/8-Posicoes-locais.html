@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+    <!-----Data inicial ---10-09-21--
+    -----Dia seguinte ---11-09-21---->
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ------------Bibliotecas e FrameWoks--------------- -->
+    <link type="text/css" rel="stylesheet" href="../lib/materialize/css/materialize.min.css" media="screen,projection" />
+    <style>
+        .tamanho{
+            height: 300px;
+        }
+        .testePosicao{
+            border: 2px solid blue;
+        }
+    </style>
+
+    <title>Alinhamento Vertical</title>
+</head>
+
+<body>
+ <!-- Alinhamento de Objetos na vertical pode ser DIV,Hs entre outros. 
+no meio-->
+    <div class="green valign-wrapper white-text tamanho">
+        <div class="align"> Ola pessoas </div>
+    </div>
+
+    <!-- ----------------------------- -->
+
+    <!-- ---------Para Alinhamento de Texto------- -->
+
+    <!-- Pode ser :left-align
+    right,center -->
+    <div class="blue white-text tamanho">
+        <h5 class="center-align">OLA Pessoas </h5>
+    </div>
+
+<!-- --------------Alinhamento Float-------- -->
+
+<!-- Para usar o float basta colocar apenas a posicao deles como no ex:abaixo right e left -->
+    <div class="row">
+        <div class="col s6 red right">Red</div>
+        <div class="col s6 yellow left">Amarelo</div>
+    </div>
+
+
+<!-- -----------------Escondendo Conteudos-------- -->
+    <!--hide esconde o conteudo como visto abaixo
+    
+    Somente para dispositivos Mobile
+    hide-on-small-only
+
+    Para medios para abaixo
+    .hide-on-med-and-down-->
+
+    <div class="row">
+        <div class="col s6 orange hide">laranja</div>
+        <div class="col s6 yellow hide-on-small-only">Amarelo</div>
+    </div>
+
+        <!--hoverable adicionar uma sombra-->
+
+    <div class="hoverable card-panel brown">
+    </div>
+
+
+    <script type="text/javascript" src="../lib/materialize/js/materialize.min.js"></script>
+</body>
+
+</html>

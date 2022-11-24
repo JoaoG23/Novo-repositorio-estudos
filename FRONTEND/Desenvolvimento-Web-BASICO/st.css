@@ -1,0 +1,38 @@
+  
+.bot1{
+    background-color: rgb(235, 230, 211);
+    width: 6cm;
+    height: 6cm;
+    outline: blue;
+    border:10px solid blue;
+    padding:1cm;/* joga o texto para o centro*/
+    margin: 1cm;/* o background-color bot1 para fora
+    back ground body*/
+    /*box-sizing: border-box;*//*para adaptações da bordas de um texto*/
+        
+}
+.borda{
+   /* border-radius: 6px;
+    border-style: solid;
+    border-color: rgb(91, 158, 4);
+    border-width: 10px;
+    box-shadow: 5px 5px 5px black;
+    margin-top: 1cm;
+    background-color: rgb(250, 250, 250);*/
+}
+p{/*Alinhamento de texto*/
+    color:red;
+    text-align:justify;
+    text-indent: 1cm;/*indentação para o paragrafo*/
+    text-decoration: underline line-through overline;
+    letter-spacing: 2px;/*Espaçamento de texto*/
+    line-height: 15px;/*altura da linha do texto*/
+    word-spacing: 5px;/*espacamento de uma palavra da outra*/
+    text-shadow:2px 2px 3px saddlebrown;
+    /*text-transform:capitalize; so primeira letra
+    text-transform: uppercase; tudo maiusculo
+    text-transform:lowercase; minusculo*/
+}
+a{ text-decoration: none;
+
+}

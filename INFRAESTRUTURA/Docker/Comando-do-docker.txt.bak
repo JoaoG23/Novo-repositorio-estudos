@@ -1,0 +1,12 @@
+Aprendendo docker 
+docker ps = lista os containers
+docker stats = mostra status dos containers
+docker run --name meu-primeiro-containers -p 80:80 -d nginx =
+ele ira puxa a imagem nginx para dentro do containers
+
+docker images = Mostra as imagens existente no container
+
+docker rm (4 digitos inicial do container) = remove a imagem sem esta inicializada
+EX:
+docker rm -f 4c27 = pra usar em um containe ativo
+docker rmi nginx = para remover a imagem

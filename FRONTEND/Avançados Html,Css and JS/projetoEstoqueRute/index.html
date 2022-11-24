@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Sistema Estoque Gama</title>
+    <style>
+        .joaoWidth {
+            width: 400px;
+            height: 100px;
+            border-radius: 10px;
+        }
+
+        .joaoHide {
+            display: none;
+        }
+
+        .joaoBackColor {
+            background-color: rgb(74, 117, 39);
+        }
+
+        .borderJoao {
+            border: 2px solid rgb(41, 41, 41);
+        }
+
+        .joaoHeight {
+            height: 700px;
+        }
+
+        .joaoShadows {
+            box-shadow: 4px 3px 10px rgb(197, 197, 197);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ======Login of screen======= -->
+
+    <div>
+        <nav class=" navbar bg-warning d-flex flex-column align-items-center joaoShadows">
+            <h3 class="text-uppercase font-weight-bold ">Sistema Estoque Gama</h3>
+            <form class="d-flex flex-row flex-wrap ">
+
+                <input class="p-1 m-2" id="loginName" type="text" placeholder="Digite seu Login">
+                <div id="loginValidation" class="alert alert-danger col-2 joaoHide"><span>Erro:</span> campo de Email
+                    não
+                    pode ser Vazio</div>
+
+                <input class="p-1 m-2" id="senha" type="password" name="senha" placeholder="Digite sua Senha">
+                <div id="senhaValidation" class="alert alert-danger col-2 joaoHide"><span>Erro:</span> campo de Senha
+                    não
+                    pode ser Vazio</div>
+
+                <button type="button" class=" btn btn-success m-2" onclick="openStock()">Logar
+                </button>
+            </form>
+        </nav>
+        <div class="m-3">
+            <ul class="nav nav-tabs bg-dark nav-pills nav-justified">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#produto" data-toggle="tab">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#estatisticas" data-toggle="tab">Estatísticas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#config" data-toggle="tab">Configurações</a>
+                </li>
+            </ul>
+
+
+            <div class="tab-content">
+                <div id="produto" class="tab-pane active">
+                    <table class="table table-striped table-bordered table-sm">
+                        <h4>Produtos</h4>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Quantidade</th>
+                            <th>Valor</th>
+                            <th>Local</th>
+                        </tr>
+                        <tr>
+                            <td>Batatas inglesa</td>
+                            <td>45</td>
+                            <td>5.50</td>
+                            <td>Prateleira 1</td>
+                        </tr>
+                        <tr>
+                            <td>Maçãs</td>
+                            <td>50</td>
+                            <td>3.50</td>
+                            <td>Prateleira 2</td>
+                        </tr>
+                        <tr>
+                            <td>Laranjas</td>
+                            <td>100</td>
+                            <td>2.57</td>
+                            <td>Prateleira 3</td>
+                        </tr>
+                        <tr>
+                            <td>Bananas Cattura</td>
+                            <td>90</td>
+                            <td>1.20</td>
+                            <td>Prateleira 4</td>
+                        </tr>
+                        <tr>
+                            <td>Ameixa</td>
+                            <td>125</td>
+                            <td>7.10</td>
+                            <td>Prateleira 5</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="estatisticas" class="tab-pane fade">
+                <div id="meuCarrosel" class="carousel slide" data-ride="carousel">
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+                <div id="config" class="tab-pane fade">
+                    <p>foto2</p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <footer class="joaoBackColor text-light p-3">
+        <p>Criado pelo estudante João Guilherme</p>
+    </footer>
+    <!-- ==== Part of Stock and database === -->
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+    <script src="./interface.js"></script>
+
+    <script>
+        function openStock() {
+
+            let loginName = document.getElementById("loginName").value;
+            let senha = document.getElementById("senha").value;
+
+            if (loginName == "") {
+                $("#loginValidation").removeClass("joaoHide");
+            }
+            if (senha == "") {
+                $("#senhaValidation").removeClass("joaoHide");
+            }
+        }
+    </script>
+
+
+
+
+
+</body>
+
+</html>

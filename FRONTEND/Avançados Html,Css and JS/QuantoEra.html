@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./QuantoEra.css">
+    <title>Quanto Seria Hoje?</title>
+</head>
+
+<body>
+   
+    <div class="container">
+        <!-- --------- inicio ---------- -->
+        <h1>Quanto Seria Hoje?</h1>
+        <h4>Digite o nome do Seu produto ou serviço?</h4>
+        <input id="nome_produto" type="text" nome="nome_produto" placeholder="Nome do Produto">
+
+        <h5>Qual valor do produto do seu produto na época que voçê comprou?</h5>
+        <input id="antigo_valor" type="number" name="antigo_valor" placeholder="Digite o Valor em Reais">
+
+        <h4>Qual o ano :</h4>
+        <!-- --------- formulário ---------- -->
+        <form>
+            <select id="ano" name="ano" size="5" multiple>
+                <option value="136" selected>1999</option>
+                <option value="151">2000</option>
+                <option value="180">2001</option>
+                <option value="200">2002</option>
+                <option value="240">2003</option>
+                <option value="260">2004</option>
+                <option value="300">2005</option>
+                <option value="350">2006</option>
+                <option value="380">2007</option>
+                <option value="415">2008</option>
+                <option value="465">2009</option>
+                <option value="510">2010</option>
+                <option value="545">2011</option>
+                <option value="622">2012</option>
+                <option value="678">2013</option>
+                <option value="724">2014</option>
+                <option value="788">2015</option>
+                <option value="880">2016</option>
+                <option value="937">2017</option>
+                <option value="954">2018</option>
+                <option value="998">2019</option>
+            </select>
+        </form>
+        <button onclick="calc()">Calcule</button>
+
+        <!-- --------- Final ---------- -->
+        <div class="aviso">
+            <h4>Atenção</h4>
+
+            <p>Calculo a seguir e feito com base no 
+                salário minímo da época, não levanda
+                inflação IPCA ou IGP-M!
+            </p>
+        </div>
+        <div id="resultado">
+        </div>
+        <footer>
+            Feito por João Guilherme
+        </footer>
+    </div>
+
+    <figure>
+        <img class="picture" src="./backMoney.png">
+    </figure>
+
+    <script src="./QuantoEra.js"></script>
+</body>
+
+</html>

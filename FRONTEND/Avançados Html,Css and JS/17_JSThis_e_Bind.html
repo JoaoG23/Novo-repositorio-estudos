@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This e Bind</title>
+</head>
+<body>
+    <script>
+
+        
+// function speakGeneric(){
+//     console.log(this.sound);
+// }
+//         let dog = {
+//             sound:" au au",
+//             speak:speakGeneric
+//         }
+
+//         let cat = {
+//             sound:"Miau",
+//             speak:speakGeneric
+//         }
+
+//         // dog.speak();
+//         // cat.speak();
+
+//         let bindedFunction = speakGeneric.bind(dog);
+
+//         bindedFunction();
+
+// Arrow Function
+
+// declarando uma funcão no modo Variavel 
+// let dobro = function(x){
+// console.log(2 * x);
+// }
+
+// dobro(2);
+
+
+//De modo normal 
+// function dobro(x){
+//     console.log(2 * x);
+// }
+
+// dobro(50);
+
+//Para um so valor em vez de varios , entao não precisa de mmuitos argumentos
+
+// let dobro = x => {
+//     return(2 * x);
+// }
+
+// console.log(dobro(9));
+// Dependedo voce nao precisa nem colocar RETURN - elas nao entende o THIS nem o BIND  e  ele imprime o Windows
+
+// RESUMINDO = aRROW FUNCTION 
+//  O CODIGO fica muito mais SIMPLES porem nao pode usar o BIND nen THIS nela.
+
+let dobro = x => (2 * x);
+console.log(dobro(3));
+    </script>
+</body>
+</html>

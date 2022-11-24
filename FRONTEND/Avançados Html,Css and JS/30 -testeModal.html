@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEste de modal</title>
+    <style>
+        html{
+            margin:0;
+        }
+        body{
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .debug{
+            border: 1px solid rgb(4, 82, 4);
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            background-color: rgb(219, 219, 219);
+
+        }
+
+        .header{
+
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: auto;
+            background-color: rgb(92, 113, 205);
+            position: absolute;
+            top:0%;
+            
+
+            color: lavender;
+        }
+        .logo{
+            width: 100px;
+            /* float: left; */
+        }
+        .nav-bar{
+            width: 10%;
+            display: flex;
+            gap: 10px;
+            /* float: right; */
+            position: relative;
+        }
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+
+        <header class="header debug">
+            <div class="logo debug" >Teste Logomarca
+                <img>
+            </div>
+            <ul class="nav-bar debug">
+                <li><a>Menu</a></li>
+                <li><a>List</a></li>
+                <li><a>Home</a></li>
+            </ul>
+        </header>
+        <div>
+
+        </div>
+        <footer>
+            <section>
+                <p>Todo os direito reservado ao João Guilherme</p>
+            </section>
+        </footer>
+    </div>
+</body>
+</html>
