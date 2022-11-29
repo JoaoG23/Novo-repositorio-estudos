@@ -28,7 +28,9 @@ RODAR e CRIAR-------------
 
 PARAR-----------
 
+
 *docker stop (CONTAINER) = ex: docker stop 1887862b35e2* = para o serviço
+*docker stop hardcore_pare* = para o container
 
 REMOVER--------------
 
@@ -41,6 +43,12 @@ EX:
 LOGS ----------
 
 *docker logs (NAME)* = ver logs da aplicacao que esta rodando.
+
+
+
+CRIAR IMAGES -----------
+
+*docker build .* para criar a image 
 
 
 
