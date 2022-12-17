@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa dados</title>
+</head>
+<body>
+    <input type="text" id="pesquisador">
+    <h1>
+        Pesquisa
+    </h1>
+    <main class="viagens">
+        <div id="carro">
+            <h2>Carro</h2>
+            <p>lorem</p>
+        </div>
+        <div id="casa">
+            <h2>Casa</h2>
+        </div>
+        <div id="luneta">
+            <h2>Luneta</h2>
+        </div>
+    </main>
+
+    <script>
+const pesquisadorInput = document.querySelector('#pesquisador');
+const listaDeViagens = document.querySelector('.viagens');
+
+pesquisadorInput.addEventListener('input', () => {
+    buscaViagemERedirecionaAtePagina(pesquisadorInput, listaDeViagens)
+})
+
+function buscaViagemERedirecionaAtePagina(inputPesquisador, containerDeDadosAPesquisar) {
+    const valorPesquisado = inputPesquisador.value;
+    const containerDados = containerDeDadosAPesquisar.childNodes;
+
+    containerDados.forEach(dado => { // Valida de é vazio
+        if (dado.id === valorPesquisado) { // Filtra o elemento
+            console.info(dado)
+            window.location.assign(`${dado.id}.html`)
+        }
+    });
+    
+}
+    </script>
+</body>
+</html>
