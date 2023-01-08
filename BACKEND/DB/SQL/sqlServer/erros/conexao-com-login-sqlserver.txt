@@ -1,0 +1,11 @@
+Erro 18456 Microsoft SQL Serve - Solução definitiva
+https://www.youtube.com/watch?v=U8T16HpcS5E&ab_channel=Fcatae
+
+2- Como ver todas as tables dos schema = show tables mysql
+
+SELECT * FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA='nome_schema'; 
+
+EX:
+SELECT * FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA='nome_schema'; 
