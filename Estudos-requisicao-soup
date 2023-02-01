@@ -169,6 +169,7 @@ function indexController() {
         // ---  Estoques de Valores -----
         let arrayDeValoresInputs = [];
         let arrayDeValoresInterruptores = [];
+        // Novo dados
 
         // ----Extrair os valores e armazena no arrays Acimas------
         extraiValoresTipoValueEArmazena(arrayDeValoresInputs, inputs);
