@@ -441,3 +441,8 @@ const todo4:TodoPreview2 = {
 }
 
 console.info(todo4);
+
+
+/// Juntar duas intefaces
+
+// interface IFooBar extends IFoo, IBar {}
