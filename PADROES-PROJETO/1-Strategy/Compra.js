@@ -51,3 +51,4 @@ Strategy.main()
 
 // ESTRATEGIAS ---------------
 // Estrategia = Concreta
+// Calculadora exemplo
