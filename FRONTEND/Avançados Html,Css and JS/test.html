@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lortes</title>
+    <style>
+        @media print {
+            @page {
+                /* size:1in 4in ; */
+                bleed: 7pt;
+                size: 10cm 4cm portrait;
+                /* size: 4cm 4cm portrait; */
+                /* width: 100pt; */
+            }
 
-    <script>
-        function at(){
-        let t = document.getElementById("mut")
-        // t.onclick = mudaText;
-        t.addEventListener("mouseover",mudaText)
-    }
-    function mudaText(){
-        this.innerHTML = "Novo TexTo"
-    }
-</script>
+            .test {
+                width: 100px;
+            }
+        }
+    </style>
 </head>
-<body onload= "at()">
-    <h1 id="mut">Mudanca</h1>
+
+<body>
+    <div class="test">
+        <img src="./codigo.png">
+
+        <p>Codigo gerado</p>
+    </div>
+
 </body>
+
 </html>
