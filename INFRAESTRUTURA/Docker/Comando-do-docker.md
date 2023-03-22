@@ -61,3 +61,7 @@ apt-get install docker.io
 ------- PARA ENTRA NO CONTAINER ----------------
 
 *docker exec -it meu_container /bin/bash*
+
+
+Para RODAR COMPOSER arquivo
+*docker-compose up -d*
