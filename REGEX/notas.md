@@ -92,3 +92,20 @@ tenha no minimo
 
 pode também conter listas;
 /[abc]{2,4}/
+
+
+Explicando regex de forma simples
+
+
+https://forum.casadodesenvolvedor.com.br/topic/30-valida%C3%A7%C3%A3o-b%C3%A1sica-com-regex-express%C3%B5es-regulares/
+
+
+## CRIADAS 
+
+Telefone
+
+        "^[+][0-9]{2}[(]\d{2}[)]\d{4,5}[-]\d{4}"gm
+
+         +09(22)93383-0933
+
+Validar 
