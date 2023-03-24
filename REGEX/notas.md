@@ -108,4 +108,9 @@ Telefone
 
          +09(22)93383-0933
 
-Validar 
+Valiar Email 
+
+/^[a-z]{2,}[@][a-z]{2,}[.]{1}[a-z]{3,3}$/gm
+
+joao@guilherme.com
+
