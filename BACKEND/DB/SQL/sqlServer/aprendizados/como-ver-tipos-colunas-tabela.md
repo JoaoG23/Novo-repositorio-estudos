@@ -1,0 +1,15 @@
+## Como ver os tipos das colunas das tabelas
+
+```sql
+
+
+SELECT
+    COLUMN_NAME,
+    DATA_TYPE,
+    CHARACTER_MAXIMUM_LENGTH AS MAX_LENGTH,
+    CHARACTER_OCTET_LENGTH AS OCTET_LENGTH
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'nome_table' ;
+
+
+```
