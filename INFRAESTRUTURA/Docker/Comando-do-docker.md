@@ -20,7 +20,7 @@ _docker <sub-comando> <opcoes>_= informações sobre os comandos
 
 RODAR e CRIAR-------------
 
-_docker run_ --name meu-primeiro-containers -p (10) = porta entrada :(80 = porta de redirecionamento -d nginx = ele ira puxa a imagem nginx para dentro do containers
+_docker run_ --name meu-primeiro-containers -p (10) = porta entrada :(80) = porta de redirecionamento -d nginx = ele ira puxa a imagem nginx para dentro do containers
 _docker run -d -p 80:80 (nome_image)_ = criar rodando app em background e direcionar a porta.
 
 _docker run -d -p 80:80 --name nginx-servidor-web (nome_image)_= Criar a imagem com nome especifico.
