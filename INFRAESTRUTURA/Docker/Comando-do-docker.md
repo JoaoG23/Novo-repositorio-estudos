@@ -65,3 +65,6 @@ apt-get install docker.io
 
 Para RODAR COMPOSER arquivo
 *docker-compose up -d*
+
+Para Desfazer images e containers COMPOSER arquivo
+*docker-compose down --rmi all --volumes --remove-orphans*
