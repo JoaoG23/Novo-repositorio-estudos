@@ -29,7 +29,12 @@ _docker run -d (nome_image)_ = para rodar a imagem em background mesmo ela não 
 
 _docker start (CONTAINER)_ = Reinicia o container recên criado.
 
+
+-----IMAGEM _______________
 _docker images_ = Mostra as imagens existente no container
+
+
+_docker build . -t nome da imagem_ = Mostra as imagens existente no container
 
 PARAR-----------
 
@@ -63,8 +68,81 @@ apt-get install docker.io
 *docker exec -it meu_container /bin/bash*
 
 
-Para RODAR COMPOSER arquivo
+Para RODAR COMPOSER arquivo e background
 *docker-compose up -d*
 
-Para Desfazer images e containers COMPOSER arquivo
+Para desfazer images e containers COMPOSER arquivo
 *docker-compose down --rmi all --volumes --remove-orphans*
+
+Para desfazer composer somente containers
+*docker-compose down*
+
+parar container e docker compose
+*docker-compose stop*
+
+lista todos compose existentes
+*docker compose ls -a*
+
+lista todos compose existente rodando
+*docker compose ls*
+
+
+------- LOGIN ----------------
+Como logar no docker 
+*docker login*
+Deslogar
+*docker logout*
+
+
+
+------- CRIAR IMAGEM NO DOCKER HUB ----------------
+
+1- Crie a image no docker hub 
+2- Com o nome da imagem criada no docker buildar
+com os seus arquivos:
+*docker build -t joaog545/node-joao-image ./web*
+
+----- ATUALIZAR IMAGEM do DOCKER HUB -------------------
+1- Em seguir jogue a image atualizada com docker 
+push para nuvem
+*docker push joaog545/node-joao-image*
+
+2- Para atualizar image no docker hub basta buildar
+imagem com nova tag
+
+*docker build -t joaog545/node-joao-image .*
+
+3- Para Subir a image atualizada no docker hub 
+
+*docker push joaog545/node-joao-image:novavesaoteste*
+
+----- COMO buscar image do docker  ------------------- 
+
+*docker pull joaog545/node-joao-image:novavesaoteste*
+
+------- STATS ----------------
+Ver status  
+*docker stats*
+
+
+VOLUME --------------------------------
+
+3 Tipos de volume 
+Anonimos  = aleatorio flag -v 
+Nomeadors  = pode ser reaproveitados
+Bind mounts  = Salvamos dados na maquina
+local
+
+
+1- Lista todos volumes
+
+*docker volume ls*
+
+2- Rodar contaier com volume anonimos -v /data
+
+docker run -d -p 80:80 --name nome_container (nome_image) --rm -v /data phpmsg
+
+3 - Rodar docker volume nomeado 
+
+-v nomeVolume : (caminho workdir)
+3- *docker run -d -p 81:80 --name phpcontainer2 -v phpvolume:/var/www/html/messages --rm phpmsg*
