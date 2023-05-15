@@ -160,6 +160,7 @@ Exemplo de comando :
 *docker run -d -p 80:80 --name phpcontainer -v C:\github\joaoG23\pessoal\curso_docker\2_volumes\messages:/var/www/html/messages --rm phpmsg*
 
 
+
 5- Como atualização da api com bind mount 
 
 Retire a pasta final (\messages) dos dois caminhos
@@ -168,6 +169,7 @@ Exemplo de comando :
 *docker run -d -p 80:80 --name phpcontainer -v C:\github\joaoG23\pessoal\curso_docker\2_volumes\:/var/www/html --rm phpmsg*
 
 
+CRIAR VOLUME ---------------------
 6- Como criar um volume nomeado individual 
 
 Exemplo de comando :
@@ -181,3 +183,21 @@ para utilizar-lo volume!
 
 para utilizar-lo no volume!
 *docker run -d -p 80:80 --name phpcontainer -v (testecriacaovolume):/var/www/html/ --rm phpmsg*  
+
+
+7- INSPECIONAR VOLUMES -------------------
+
+exemplo: 
+*docker volume inspect (nome volume)*
+*docker volume inspect testecriacaovolume*
+
+8- REMOVER VOLUME -------------------
+
+como o container desligado
+exemplo: 
+*docker volume rm (nome volume)*
+*docker volume rm testecriacaovolume*
+
+Como remover volume não utilizados
+exemplo: 
+*docker volume prume*
