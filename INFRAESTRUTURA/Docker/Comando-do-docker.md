@@ -168,8 +168,16 @@ Exemplo de comando :
 *docker run -d -p 80:80 --name phpcontainer -v C:\github\joaoG23\pessoal\curso_docker\2_volumes\:/var/www/html --rm phpmsg*
 
 
-6- Como criar um volume nomeado 
+6- Como criar um volume nomeado individual 
 
 Exemplo de comando :
 
 *docker volume create testecriacaovolume*
+
+
+para utilizar-lo volume!
+
+*docker run -d -p 80:80 --name phpcontainer -v (nome_volume_criado):/var/www/html/ --rm phpmsg* 
+
+para utilizar-lo no volume!
+*docker run -d -p 80:80 --name phpcontainer -v (testecriacaovolume):/var/www/html/ --rm phpmsg*  
