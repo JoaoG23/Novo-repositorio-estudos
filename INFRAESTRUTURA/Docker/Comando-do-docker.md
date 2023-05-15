@@ -146,3 +146,30 @@ docker run -d -p 80:80 --name nome_container (nome_image) --rm -v /data phpmsg
 
 -v nomeVolume : (caminho workdir)
 3- *docker run -d -p 81:80 --name phpcontainer2 -v phpvolume:/var/www/html/messages --rm phpmsg*
+
+
+4- Como criar bind mount 
+
+Quando o container o 
+primeiro caminho será onde estará salvará os arquivos pelo PC 
+segundo caminho para o container saber onde será salvo
+:/var
+
+
+Exemplo de comando :
+*docker run -d -p 80:80 --name phpcontainer -v C:\github\joaoG23\pessoal\curso_docker\2_volumes\messages:/var/www/html/messages --rm phpmsg*
+
+
+5- Como atualização da api com bind mount 
+
+Retire a pasta final (\messages) dos dois caminhos
+Exemplo de comando :
+
+*docker run -d -p 80:80 --name phpcontainer -v C:\github\joaoG23\pessoal\curso_docker\2_volumes\:/var/www/html --rm phpmsg*
+
+
+6- Como criar um volume nomeado 
+
+Exemplo de comando :
+
+*docker volume create testecriacaovolume*
