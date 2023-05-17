@@ -201,3 +201,33 @@ exemplo:
 Como remover volume não utilizados
 exemplo: 
 *docker volume prume*
+
+
+DOCKER NETWORK ------------------------------------
+
+LISTA ------------------
+
+Como listar redes:
+exemplo: 
+*docker network ls*
+
+
+CRIAR ------------------
+Cria redes :
+exemplo: 
+*docker network create (nome_rede)*
+
+
+Criar rede com drive diferente:
+exemplo: 
+*docker network create -d macvlan (nome_rede)*
+
+
+REMOVER ------------------
+Remover redes :
+exemplo: 
+*docker network rm (nome_rede)*
+
+Para remover redes em massa 
+exemplo:
+*docker network prune*
