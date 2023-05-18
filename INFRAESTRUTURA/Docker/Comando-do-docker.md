@@ -231,3 +231,21 @@ exemplo:
 Para remover redes em massa 
 exemplo:
 *docker network prune*
+
+COMO LIGAR DOIS CONTAINER E BANCO DE DADOS MESMA REDE __INTERNA__ ________________
+
+1- Build o banco de dados
+exemplo:*docker build -t (nome_image) .*
+
+2- Criar um network para os dois container 
+
+exemplo:
+*docker run -d -p 3306:3306 --name (nome-container) --rm --network (nome_rede) -e MYSQL_ALLOW_EMPTY_PASSWORD=true (nome_image)*
+
+3- Buildar a image do container API
+
+mesmo comando de sempre 
+
+4- Suba o container com a mesma network
+exemplo:
+*docker run -d -p 5000:5000 --name flask-api-container --rm --network flask-network api-flask-image*
