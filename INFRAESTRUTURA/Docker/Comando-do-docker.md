@@ -249,3 +249,6 @@ mesmo comando de sempre
 4- Suba o container com a mesma network
 exemplo:
 *docker run -d -p 5000:5000 --name flask-api-container --rm --network flask-network api-flask-image*
+
+
+COMO LIGAR DOIS CONTAINER E BANCO DE DADOS MESMA REDE __INTERNA__ _______________
