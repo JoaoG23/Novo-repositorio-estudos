@@ -251,4 +251,17 @@ exemplo:
 *docker run -d -p 5000:5000 --name flask-api-container --rm --network flask-network api-flask-image*
 
 
-COMO LIGAR DOIS CONTAINER E BANCO DE DADOS MESMA REDE __INTERNA__ _______________
+COMO CONECTAR UM CONTAINER __CRIADO__ APÒS _______________
+exemplo:
+
+
+*docker network connect flask-network (eccd9d45ebeb = id container)*
+
+COMO DESCONECTAR UM CONTAINER __CRIADO__ APÒS _______________
+exemplo:
+
+*docker network disconnect flask-network mysql-api-container*
+
+INSPECIONAR REDE 
+
+*docker network inspect (nome_rede)*
