@@ -265,3 +265,11 @@ exemplo:
 INSPECIONAR REDE 
 
 *docker network inspect (nome_rede)*
+
+
+
+*YAML--------------------------------------*
+*DOCKER COMPOSE----------------------------*
+
+Para subir serviços do docker
+*docker-compose up*
