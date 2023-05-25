@@ -272,4 +272,14 @@ INSPECIONAR REDE
 *DOCKER COMPOSE----------------------------*
 
 Para subir serviços do docker
-*docker-compose up*
+*docker-compose up (-d modo de sem terminal aberto)*
+
+
+REMOVER E PARA CONTAINER
+*docker-compose down*
+
+
+
+UTILIZANDO VARIAVEIS DE AMBIENTE NO COMPOSE
+
+
