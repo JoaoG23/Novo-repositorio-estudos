@@ -1,0 +1,14 @@
+Gerenciando interface APIs
+https://www.youtube.com/watch?v=Y56eFdjaNlM&ab_channel=MatheusCastiglioni
+
+Contoller Pattern
+
+Pontos
+
+-Pode colocar validadores no controller
+
+- O serviço não pode retorna nada na camada de dominio
+o ideal será retorna um DTO e não uma entidade
+
+-Serviço não pode ter conhecimentos de interface: Exemplo:
+Não adicionar diretamente query.params ou body

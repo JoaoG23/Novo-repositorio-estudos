@@ -63,6 +63,11 @@ em Seguida digite:
 apt-get install docker.io
 
 
+VERIFICAR DATA do container
+
+*docker exec <container_name_or_id> date*
+
+
 ------- PARA ENTRA NO CONTAINER ----------------
 
 *docker exec -it meu_container /bin/bash*
@@ -86,12 +91,17 @@ lista todos compose existentes
 lista todos compose existente rodando
 *docker compose ls*
 
+rebuild of the images 
+*docker-compose up --build*
+
 
 ------- LOGIN ----------------
 Como logar no docker 
 *docker login*
 Deslogar
 *docker logout*
+
+
 
 
 
