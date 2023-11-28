@@ -10,25 +10,54 @@
 
 <body>
     <script>
-        function fatorial(numero) {
-            let fat = 1;
-            let i = 1;
-            while (numero > 0) {
-                fat = fat * numero;
-                numero--;
-            }
-            return fat
-            // console.info(`O Fatorial ${fat} corresponde`);
-        }
+        // const array = [0]
+        const array = [0, 5, 4]
 
-        const dataFatorials0by9 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-        const storageOfTheFatorials = [];
-        dataFatorials0by9.forEach(value => {
-            let sumFatorial = fatorial(value);
-            let fatorialMinus500Thouzand = (sumFatorial - 500000);
-            storageOfTheFatorials.push(fatorialMinus500Thouzand);
-        })
-        console.log(storageOfTheFatorials);
+        // const desordenados = 42145;
+        // const desordenados = 145263;
+        const desordenados = 123456789;
+
+
+        function orderingNumbers(disorderedNumbers) {
+
+            const disorderedString = String(disorderedNumbers)
+            
+            function stringToArrayNumbers(disordereds) {
+                let arrayOfDisordered = []
+                for (const disordered of disordereds) {
+                    arrayOfDisordered.push(Number(disordered))
+
+                }
+                return arrayOfDisordered
+            }
+            const disorderedArray = stringToArrayNumbers(disorderedString)
+
+            const crescentOrdered = disorderedArray.sort(compareNumbersAndOrdered);
+            const decreasingOrdered = crescentOrdered.reverse()
+            const decreasingOrderedStrings = crescentOrdered.join('')
+            const decreasingOrderedNumbers = Number(decreasingOrderedStrings)
+            return decreasingOrderedNumbers
+
+            // Utils
+            function compareNumbersAndOrdered(a, b) {
+                return a - b;
+            }
+
+            function stringToArrayNumbers(disordered) {
+                let arrayOfDisordered = []
+                for (const disordered of disorderedString) {
+                    arrayOfDisordered.push(Number(disordered))
+
+                }
+                return arrayOfDisordered
+            }
+        }
+        orderingNumbers(desordenados)
+        console.log("🚀 ~ file: index.html:54 ~ orderingNumbers(desordenados):", orderingNumbers(desordenados))
+        // separatingNumbers()
+
+
+
     </script>
 </body>
 
