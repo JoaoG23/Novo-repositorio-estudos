@@ -177,7 +177,7 @@ function indexController() {
         
         //_ Inserer na requisicao os dados 
         const templateGpio =
-            `<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:services.accesscontroller">
+            `<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:services.teste">
                 <soapenv:Header/>
                 <soapenv:Body>
                 <urn:sendCmd soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
