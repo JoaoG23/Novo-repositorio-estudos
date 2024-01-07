@@ -1,0 +1,2 @@
+
+O comando npm install --verbose é utilizado para instalar as dependências de um projeto Node.js usando o npm (Node Package Manager) com a exibição detalhada de logs durante o processo de instalação. A opção --verbose fornece informações mais detalhadas sobre as etapas que o npm está executando, o que pode ser útil para diagnosticar problemas durante a instalação.*
