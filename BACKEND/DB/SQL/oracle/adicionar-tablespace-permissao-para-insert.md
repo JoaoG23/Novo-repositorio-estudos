@@ -1,0 +1,51 @@
+## Adicionar Tablespace Permissao para insert
+
+
+The error `ORA-01950: no privileges on tablespace` indicates that the user does not have the necessary privileges to allocate space in the specified tablespace. It seems like the error is related to the tablespace `USERS`.
+
+To resolve this issue, you have a few options:
+
+1. **Grant Quota on the Tablespace:**
+   You can grant a quota to the user for the specified tablespace. This allows the user to use space in the tablespace.
+
+   ```sql
+   ALTER USER your_username QUOTA UNLIMITED ON USERS;
+   --- Ex: SYSDG or DIP = Name of Schema
+   ALTER USER SYSDG QUOTA UNLIMITED ON USERS;
+   ```
+
+   Replace `your_username` with the actual username that is encountering the error.
+
+2. **Specify a Different Tablespace:**
+   If you have another tablespace with sufficient quota, you can specify that tablespace when creating the table.
+
+   ```sql
+   CREATE TABLE HISTORICO_PESSOAS (
+      ID NUMBER PRIMARY KEY,
+      NOME VARCHAR2(100)
+   ) TABLESPACE your_alternative_tablespace;
+   
+   -- Example:
+
+   CREATE TABLE HISTORICO_PESSOAS (
+      ID NUMBER PRIMARY KEY,
+      NOME VARCHAR2(100)
+   ) TABLESPACE USERS;
+   ```
+
+   Replace `your_alternative_tablespace` with the name of the tablespace where the user has the necessary privileges.
+
+3. **Check Default Tablespace:**
+   Ensure that the user's default tablespace is set to a tablespace where they have the necessary privileges.
+
+   ```sql
+   ALTER USER your_username DEFAULT TABLESPACE your_tablespace;
+
+     -- Example:
+    ALTER USER SYSDG DEFAULT TABLESPACE USERS;
+
+   ```
+
+   Replace `your_username` with the actual username and `your_tablespace` with the tablespace where the user has the necessary privileges.
+
+Choose the option that best fits your requirements and access privileges. If you are not the database administrator, you might need to contact the administrator to adjust privileges or allocate space in the appropriate tablespace.
