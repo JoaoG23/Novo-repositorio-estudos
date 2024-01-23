@@ -48,6 +48,14 @@ values = [1,2,4];
 let title: [number, string];
 title = [1, 'foo'];
 
+let arrayOfArrays: Array<[number, string]> = [
+    [1, 'foo'],
+    [2, 'bar'],
+    [3, 'baz']
+];
+
+
+
 // Enum 
 enum Color {
     white = '#fff',
