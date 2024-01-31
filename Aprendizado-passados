@@ -192,3 +192,4 @@ sudo systemctl restart postgresql
 
 4 - Va nesse caminho agora e altere postgresql
 nano /etc/postgresql/12/main/pg_hba.conf
+
