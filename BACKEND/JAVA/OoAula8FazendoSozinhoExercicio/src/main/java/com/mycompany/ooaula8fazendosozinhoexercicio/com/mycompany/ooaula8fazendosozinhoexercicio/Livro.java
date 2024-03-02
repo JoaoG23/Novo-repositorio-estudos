@@ -91,8 +91,5 @@ public class Livro implements Publicacao {
     @Override
     public void voltaPagina() {
         this.paginaAtual--;
-    }
-
-
-    
+    }    
 }
