@@ -49,7 +49,7 @@ public class ContaBanco {
              }
        }
         
-        public void setSacar( float valorSacado ){
+        public void setSaldo( float valorSacado ){
             
              if( this.status == false ) {
                  System.out.println("Conta fechada: Nao e possivel sacar");
