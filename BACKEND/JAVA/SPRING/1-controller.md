@@ -38,6 +38,9 @@ public void cadastrar(@RequestBody User user){
 }
 ```
 
+Não é uma boa pratica enviar direto o atributo da 
+requisição por isso se usa-se o DTO;
+
 ### Métodos HTTPs
 
 - **@PostMapping** : Seta a rota como POST
