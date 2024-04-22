@@ -1,0 +1,1 @@
+ select pg_typeof(peso_unitario_do_item) from "int".int_produto;
