@@ -62,3 +62,35 @@ public ResponseEntity<String> hello() {
 
 //  ResponseEntity.ok().body(users);
 ````
+Não exibir dados da aplicação nos erros: 
+**application.properties**
+````
+server.error.include-stacktrace=never
+````
+server.error.include-stacktrace=never
+
+
+
+### RestControllerAdvice
+
+
+@RestControllerAdvice
+
+- Responsável por toda excessão encontada
+pelo controller, ou seja, toda excessão para por aqui.
+
+````java
+@RestControllerAdvice
+public class HandlerErros {
+
+	@ExceptionHandler(EntityNotFoundException.class)
+	public ResponseEntity<?> handle404() {
+		return  ResponseEntity.notFound().build();
+	}
+}
+
+````
+@ExceptionHandler(EntityNotFoundException.class) 
+Indetifica o notFound:
+
+- ? = Qualquer tipo
