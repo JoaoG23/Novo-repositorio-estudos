@@ -21,3 +21,5 @@ Para lidar com o erro de nome de arquivo muito longo no Git, você pode tentar a
 4. **Use um arquivo .gitignore**: Certifique-se de que você está ignorando arquivos ou diretórios que não precisam ser versionados. Isso pode ajudar a reduzir a contagem de caracteres nos caminhos dos arquivos.
 
 Depois de aplicar uma ou mais dessas soluções, você pode tentar realizar o commit novamente. Certifique-se de que o caminho do arquivo não exceda o limite de caracteres suportado pelo sistema de arquivos.
+
+
