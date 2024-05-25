@@ -14,3 +14,7 @@ Características da Linguagem
 - Dinamicamente tipada
 - Usa indentação por padrão
 - Documentação abundante
+
+
+Entrando no terminal = py ou py3
+Saindo exit()
