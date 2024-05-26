@@ -34,3 +34,19 @@ segundoValor = int(input("Segundo valor:"))
 isIguais = primeiroValor == segundoValor
 
 print('São iguais?' , isIguais, '\n')
+
+# LOGICOS
+
+x = True
+y = False
+resultado = x and y
+print(resultado)  # Resultado: False
+
+a = True
+b = False
+resultado = a or b
+print(resultado)  # Resultado: True
+
+valor = True
+resultado = not valor
+print(resultado)  # Resultado: False
