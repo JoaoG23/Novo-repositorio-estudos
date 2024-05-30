@@ -1,0 +1,112 @@
+## Factory-method
+
+Construção de items respeitando um determinado padrão;
+
+#### Form 1
+
+Parecido com um construtor, já implementado
+por alguns métodos da linguagem;
+
+````java 
+// Importações
+import java.util.Calendar;
+import java.text.NumberFormat;
+import java.util.stream.Stream;
+import java.util.List;
+import java.lang.Integer;
+
+public class FactoryMethod_4 {
+
+    // Construtor virtual
+
+    public static void main(String[] args) {
+
+        // Métodos de fábrica estáticos
+
+        Calendar calendar = Calendar.getInstance(); // Obtém uma instância do calendário atual
+
+        NumberFormat numberFormat = NumberFormat.getInstance(); // Obtém uma instância do formatador de números padrão
+
+        Stream<Integer> stream = Stream.of(1, 2, 3, 4); // Cria um stream com os elementos 1, 2, 3 e 4
+
+        List<Integer> list = List.of(1, 2, 3, 4); // Cria uma lista imutável com os elementos 1, 2, 3 e 4
+
+        Integer integer = Integer.valueOf("1234"); // Converte a string "1234" em um objeto Integer
+    }
+}
+````
+
+#### Form 2
+
+
+````java 
+public class FactoryMethod_2 {
+
+    // Interface de produto
+    public interface Produto {
+        void executarOperacao();
+    }
+
+    // Implementação concreta do produto 1
+    public class Produto1 implements Produto {
+
+        @Override
+        public void executarOperacao() {
+            System.out.println("Executando operação do Produto 1");
+        }
+    }
+
+    // Implementação concreta do produto 2
+    public class Produto2 implements Produto {
+
+        @Override
+        public void executarOperacao() {
+            System.out.println("Executando operação do Produto 2");
+        }
+    }
+
+    // Criador abstrato
+    public abstract class Criador {
+        public abstract Produto novoProduto();
+    }
+
+    // Criador concreto 1
+    public class Criador1 extends Criador {
+
+        @Override
+        public Produto novoProduto() {
+            return new Produto1();
+        }
+    }
+
+    // Criador concreto 2
+    public class Criador2 extends Criador {
+
+        @Override
+        public Produto novoProduto() {
+            return new Produto2();
+        }
+    }
+
+    // Método de fábrica estático
+    public static Produto criarProduto(String tipoProduto) {
+        if (tipoProduto.equals("produto1")) {
+            return new Criador1().novoProduto();
+        } else if (tipoProduto.equals("produto2")) {
+            return new Criador2().novoProduto();
+        } else {
+            throw new IllegalArgumentException("Tipo de produto inválido: " + tipoProduto);
+        }
+    }
+
+    // Método principal
+    public static void main(String[] args) {
+        Produto produto1 = criarProduto("produto1");
+        produto1.executarOperacao();
+
+        Produto produto2 = criarProduto("produto2");
+        produto2.executarOperacao();
+    }
+}
+
+````

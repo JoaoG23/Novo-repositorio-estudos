@@ -1,3 +1,7 @@
+### Guarda alterações que ainda não foram commitadas em um arquivo;
+
+ -  Limpa as alteraçãoe atuais quando ele é executado.
+ 
 O comando `git stash` é usado quando você quer salvar as alterações que fez no seu diretório de trabalho, mas não quer fazer um commit ainda. Ele pega o estado sujo do seu diretório de trabalho - ou seja, suas modificações rastreadas e não rastreadas - e salva em uma pilha de alterações não confirmadas que você pode reaplicar a qualquer momento.
 
 Aqui estão alguns cenários em que `git stash` pode ser útil:
