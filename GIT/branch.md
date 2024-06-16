@@ -31,6 +31,8 @@ Finally, fetch all the branches:
    
    git fetch --prune
 
+   git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d
+
 ### CLONAR COM TODAS BRANCHS
 
 First, clone the repository:

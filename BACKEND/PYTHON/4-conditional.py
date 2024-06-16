@@ -14,11 +14,9 @@
 # print("Sua média é {}".format(media))
 
 primeiro_valor = int(input('Primeiro valor: ')) # Entrada de dados
-
 segundo_valor = int(input("Segundo valor:"))
 
 media = (primeiro_valor + segundo_valor) / 2
-
 if (media >= 7):
     print('Aprovado')
 elif (media >= 5):
