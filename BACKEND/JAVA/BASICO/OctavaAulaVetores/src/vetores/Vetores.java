@@ -94,6 +94,11 @@ public class Vetores implements VetoresInterface {
         for (AlunoArrayObject alunoArrayObject : grupoEstudandes) {
             grupoEstudandes.toString();
         }
+
+        // OR
+
+        for(int [] i: square) System.out.println(Arrays.toString(i));
+        
         System.out.println(" grupo de Estudantes: " + grupoEstudandes[0]);
     }
     

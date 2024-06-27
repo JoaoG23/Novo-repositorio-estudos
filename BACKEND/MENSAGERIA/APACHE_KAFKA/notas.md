@@ -27,3 +27,15 @@ Producer --> Tópico <-- Consumidor A
                 |-------Consumidor B
                 |-------Consumidor C
                 |-Ler do inicio--Fastão
+
+
+## How to use:
+
+1. Install kafka
+
+2. You can see to principal files
+
+```
+producer.properties
+zookeeper.properties
+```

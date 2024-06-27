@@ -2,10 +2,10 @@ O Apache Maven é uma poderosa ferramenta de gerenciamento de projetos e compree
 
 ### Comandos Básicos do Maven
 
-0. **Atualizar depedenciais após mudança no pow**
+<!-- 0. **Atualizar depedenciais após mudança no pow**
   ```bash
     mvn clean install
-  ```
+  ``` -->
 1. **Compilar o Projeto**
    ```bash
    mvn compile
