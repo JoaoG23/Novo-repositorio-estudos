@@ -95,9 +95,73 @@ var producer = new KafkaProducer<String, String>(properties());
 
 create one method 
 ```java
-private static Properties properties() {
-    var properties = new Properties();
+public class Producer {
+	public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-    properties.setProperty(pro)
-} 
+		var producer = new KafkaProducer<String, String>(properties());
+
+		var record = new ProducerRecord<String, String>("compras.do.cliente", "cliente-1", "compras:50reais");
+
+		Callback callback = (data, ex) -> {
+
+			if (ex != null) {
+				ex.printStackTrace();
+				return;
+			}
+			System.out.println("Enviado com sucesso");
+			System.out.println(data.partition());
+			System.out.println(data.offset());
+		};
+
+		producer.send(record, callback).get();
+
+	}
+
+	private static Properties properties() {
+		Properties properties = new Properties();
+		// Where kafka is running
+		properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+		// to Serialize the key
+		properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+		// to Serialize the value
+		properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+		return properties;
+	}
+}
+```
+and consumer
+
+```java
+public class Consumer {
+	public static void main(String[] args) {
+		var consumer = new KafkaConsumer<String, String>(properties());
+		// consumir as mesagens
+
+		consumer.subscribe(Collections.singletonList("compras.do.cliente"));
+
+		while (true) {
+			// What time in time to consumer
+			var records = consumer.poll(Duration.ofMillis(100));
+			for (var record : records) {
+				System.out.println("Compra nova:");
+				System.out.println(record.key());
+				System.out.println(record.value());
+				System.out.println(record.partition());
+				System.out.println(record.offset());
+			}
+		}
+	}
+
+	private static Properties properties() {
+		Properties properties = new Properties();
+		// Where kafka is running
+		properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+		// to Serialize the key
+		properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+		// to Serialize the value
+		properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+		properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "consumo-cliente");
+		return properties;
+	}
+}
 ```
