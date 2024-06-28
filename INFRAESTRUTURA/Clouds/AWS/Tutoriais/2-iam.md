@@ -21,3 +21,10 @@ senha:
 ![alt text](image-3.png)
 
 
+1. Crie usuario
+2. Selecione senha
+3. Adicione ou grupo ou permissoes
+4. Apos criado copie os dados em email
+5. Acesse URL dentro do email para usar applicacao
+
+
