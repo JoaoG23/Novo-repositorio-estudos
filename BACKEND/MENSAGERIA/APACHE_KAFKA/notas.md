@@ -197,3 +197,22 @@ Solution:
 
 Create grupoId for consumers
 
+You see one example from group id:
+Create one group in the producer
+
+groupId compras.teste
+
+```java
+var record = new ProducerRecord<String, String>("ecommerce.compras.teste", "cliente" + i, "compras:" + i + "reais");
+
+```
+Add in consumer subscribe consumer
+```java
+consumer.subscribe(Collections.singletonList("ecommerce.compras.teste"));
+```
+Increase for a group + 1 for different consumers you can see in the properties
+```java
+properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "ecommerce-teste-2"); //
+properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "ecommerce-teste-1"); //
+
+```
