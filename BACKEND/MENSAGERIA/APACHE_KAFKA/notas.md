@@ -44,7 +44,7 @@ You can see the configs properties
 producer.properties
 zookeeper.properties
 ```
-
+C:\kafka_2.13-3.7.0\bin\windows
 4. Open /bin/windows
 5. Run cmd zookeeper 
 
@@ -62,11 +62,17 @@ kafka-topics.bat --bootstrap-server localhost:9092 --describe
 
 8.Create one topic
 
-kafka-topics.bat --bootstrap-server localhost:9092 --topic compras.db.cliente --create partitions 1
+kafka-topics.bat --bootstrap-server localhost:9092 --topic compras.db.cliente --create --partitions 1
 
 9.Show all topics run cmd
 
-kafka-topics.bat --bootstrap-server localhost:9092 --describe
+	kafka-topics.bat --bootstrap-server localhost:9092 --describe
+
+10. Update partitions
+	kafka-topics.bat --bootstrap-server localhost:9092 --alter --topic ecommerce.compras --partitions 3
+
+11. Delete topic
+kafka-topics.bat --bootstrap-server localhost:9092 --delete --topic ecommerce.compras --partitions 3
 
 #### Implementation in java
 
@@ -74,18 +80,20 @@ kafka-topics.bat --bootstrap-server localhost:9092 --describe
 
 Kafka-Clients: Client Java para comunicação com Kafka
 SLF4J Simple binding: Sistema de logs para rodar a aplicação
+
+
 ````xml
-<dependency>
- <groupId>org.apache.kafka</groupId>
- <artifactId>kafka-clients</artifactId>
- <version>2.4.1</version>
-</dependency>
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-simple</artifactId>
-    <version>1.7.30</version>
-    <scope>test</scope>
-</dependency>
+    <dependency>
+    <groupId>org.apache.kafka</groupId>
+    <artifactId>kafka-clients</artifactId>
+    <version>2.4.1</version>
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.30</version>
+        <scope>test</scope>
+    </dependency>
 ````
 
 2. Create one producer
@@ -165,3 +173,27 @@ public class Consumer {
 	}
 }
 ```
+
+### Multiplas Partições /Multiplos Consumidores - Paralelismo
+
+* kafka com múltiplas partições, ou seja, podemos introduzir mais de um consumidor para o mesmo tópico para diminuir o tempo de processamento total.
+* processo de paralelismo
+* resilience In case of one partitions break the code go on running
+
+1. Start kafka and run
+
+    kafka-topics.bat --bootstrap-server localhost:9092 --topic
+    ecommerce.compras --create partitions 3
+
+![alt text](image.png)
+
+
+### Multiplos Consumidores - GroupId
+Problem:
+
+When one consumer use the message, it's deleted after used
+
+Solution: 
+
+Create grupoId for consumers
+
