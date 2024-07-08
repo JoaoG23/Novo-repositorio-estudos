@@ -9,6 +9,10 @@ public class App {
          * Como declarar o tipo em Java:
          */
 
+         // Constantes
+        final private int IDADE = 3;
+        
+
          // 1 - Modo um passando o tipo antes:
          int idadeModo1 = 3;
          float salModo1 = 1332.33f;

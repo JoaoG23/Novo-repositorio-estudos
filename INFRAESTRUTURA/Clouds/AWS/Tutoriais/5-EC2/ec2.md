@@ -26,3 +26,15 @@ Instancia
 
 10. I must to finish instance because, you'll pay for provisomanento de disco without use.
 
+
+
+11. Add one elastic IP, for public connection for you machine
+
+***Attention*** the elastic IP most be in use for you don't pay for it.
+
+![alt text](image-4.png)
+
+12. Add a IP elástico to interface 
+
+***Attenction*** In case of removal of instance you can assign this IP to
+new instance, you can use same IP public for another instances.

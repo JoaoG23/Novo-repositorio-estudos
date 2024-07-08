@@ -216,3 +216,90 @@ properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "ecommerce-teste-2"); //
 properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "ecommerce-teste-1"); //
 
 ```
+
+### Spring KAFKA
+
+#### Consumer
+
+1. Add in the pow spring kafka
+2. Add annotation in boostrap of spring
+
+```java
+package com.kafka.kafkaspring;
+
+@SpringBootApplication
+@EnableKafka
+public class KafkaspringApplication {
+	public static void main(String[] args) {
+	}
+}
+```
+
+3. Create one class consumer and add topic and group
+```java
+@Component
+public class KafkaConsumer {
+	@KafkaListener(topics = "ecommerce.cliente2", groupId = "ecommerce-groupId")
+	public void consumer(String message) {
+		System.out.println(message);
+	}
+}
+```
+#### How to create producer
+
+1. Create one controle producer 
+2. Import kafkaTemplate
+```java
+public class KafkaProduceController {
+
+	@Autowired
+	private KafkaTemplate<String, String> kafkaTemplate;
+
+	@GetMapping("/producer/{message}")
+	public void producer(@PathVariable("message") String message) {
+		this.kafkaTemplate.send("ecommerce.cliente2", message);
+	}
+}
+```
+#### Configurations 
+1. Create one class of configuration kafka
+
+```java
+public class KafkaConfig {
+	@Bean
+	public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory() {
+		ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
+		factory.setConsumerFactory(consumerFactory());
+		return factory;
+	}
+
+	// Kakfa config to know how to cosumer messages.
+	@Bean
+	public ConsumerFactory<String, String> consumerFactory() {
+
+		Map<String, Object> props = new HashMap<>();
+
+		props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+		props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+		props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+		props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+
+		return new DefaultKafkaConsumerFactory<>(props);
+	}
+
+	// Kafka config how to send messages
+	@Bean
+	public KafkaTemplate<String, String> kafkaTemplate() {
+		return new KafkaTemplate<>(producerFactory());
+	}
+	public ProducerFactory<String, String> producerFactory() {
+		Map<String, Object> props = new HashMap<>();
+
+		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+		props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+		props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+
+		return new DefaultKafkaProducerFactory<>(props);
+	}
+}
+```

@@ -4,7 +4,7 @@ public final class Aluno extends Pessoa{
     private int matricula;
     private String curso;
 
-
+    
     
     public void setMatricula(int matricula) {
         this.matricula = matricula;
