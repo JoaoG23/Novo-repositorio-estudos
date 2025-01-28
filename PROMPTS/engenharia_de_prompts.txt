@@ -116,3 +116,42 @@
     
     A combinação de diferentes estratégias de prompting pode levar a resultados mais poderosos e eficazes.
     Quase todas as perguntas que você fizer vão misturar várias técnicas.
+
+4. Formalizando prompts
+    Resumo capitulos anteriores
+    -Um papel (agir como um engenheiro ou um professor)
+    -Uma instrução ou tarefa (o que fazer)
+    -Uma pergunta (qual é a capital da Brasil?)
+    -Contexto (informações adicionais que ajudam a entender a pergunta)
+    -Exemplos (algumas amostras para guiar a resposta)  
+    O texto extraído do arquivo é:
+
+    Nem todas essas partes aparecem em todos os prompts.
+    E quando algumas delas aparecem, não há uma
+    ordem padrão.
+    Por exemplo, os dois prompts a seguir, que contêm
+    um papel, uma instrução e contexto, farão mais ou
+    menos a mesma coisa.
+
+    EXEMPLO 1: Instrução + Papel no inicio do prompt
+        Você é um médico. Leia este histórico médico e preveja os riscos para o paciente.
+        10 de março de 2000: Braço direito fraturado jogando futebol. Tratado com gesso.
+        25 de maio de 2010: Diagnosticado com hipertensão. Lisinopril prescrito.
+        12 de setembro de 2015: Desenvolveu pneumonia. Tratado com antibióticos e recuperou-se totalmente em poucas semanas.
+        8 de setembro de 2023: Sofreu uma concussão em um acidente de carro. Internado no hospital e monitorado por 24 horas.
+
+    EXEMPLO 2: Instrução + Papel no final do prompt
+        10 de março de 2000: Braço direito fraturado jogando futebol. Tratado com gesso.
+        25 de maio de 2010: Diagnosticado com hipertensão. Lisinopril prescrito.
+        12 de setembro de 2015: Desenvolveu pneumonia. Tratado com antibióticos e recuperou-se totalmente em poucas semanas.
+        8 de setembro de 2023: Sofreu uma concussão em um acidente de carro. Internado no hospital e monitorado por 24 horas.
+        Você é um médico. Leia este histórico médico e preveja os riscos para o paciente.
+
+    Nos preferimos o segundo exemplo, já que a
+    instrução é a última parte dele.
+
+    Isso é melhor porque, no primeiro exemplo, o
+    modelo de linguagem pode acabar escrevendo
+    mais contexto ao invés de seguir a instrução dada.
+
+    IA = conversar como uma pessoa sem conhecimento, explique o contexto primeiro;
