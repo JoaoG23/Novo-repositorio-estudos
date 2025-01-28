@@ -288,7 +288,9 @@ Para subir serviços do docker
 REMOVER E PARA CONTAINER
 *docker-compose down*
 
+REMOVE CONTAINER - IMAGE - VOLUME
 
+*docker-compose down --rmi all --volumes --remove-orphans*
 
 UTILIZANDO VARIAVEIS DE AMBIENTE NO COMPOSE
 

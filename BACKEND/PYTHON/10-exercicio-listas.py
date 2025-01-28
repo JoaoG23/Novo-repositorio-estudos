@@ -24,3 +24,5 @@ for bebida in bebidas_organizadas:
     print(bebida)
 
 
+# Se nota estive N = Tem que emiti-lá
+# Se não estiver = N , deve ver se email foi enviado se email = N, então envia-lo

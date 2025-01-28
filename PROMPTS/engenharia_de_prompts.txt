@@ -1,0 +1,118 @@
+1. Prompting
+    Prompt:
+        Simples:
+            Qual resultado do cálculo 100 x 199?
+        Razoavel:
+            Temos uma lista de nomes de usuários contendo o primeiro e o último nome. Precisamos que 
+            os nomes fiquem formato 'Último, Primeiro'.
+            Converta os nomes abaixo:
+            Ramiro Lobo
+            Gustavo Guanabara
+        Complexo:
+            Leia o e-mail a seguir e remova todas as informações de identificação pessoal,          
+            substituindo-as com o espaço reservado apropriado. Por exemplo, substitua o nome "Gustavo 
+            Guanabara" por "[NOME]" e garanta que todas informações pessoais foram substituídas 
+            apropriadamente.
+
+    Prompt de Atuação:
+        1 Exemplo:
+            Escreva uma avaliação sobre uma hamburgueria chamada Guanabara.
+        2 Exemplo:
+            Você é um crítico gastronômico. Escreva uma avaliação sobre uma hamburgueria chamada Guanabara.
+        3 Exemplo:
+            Você é um crítico gastronômico que escreve para o Guia Michelin. 
+            Escreva uma avaliação sobre uma hamburgueria chamada Guanabara.
+        4 Exemplo:
+            Você é um especialista em comunicação. Elabore um e-mail para seu cliente avisando
+            sobre atraso no cronograma de entrega devido a problemas logísticos.
+        5 Exemplo:
+            Você é um especialista em marketing. 
+            Elabore um e-mail para um cliente avisando sobre um atraso no cronograma de entrega devido a problemas logísticos.
+        6 Exemplo:
+            Você é um representante de atendimento ao cliente. 
+    Exemplo final
+        Elabore um e-mail para um cliente avisando sobre um atraso no cronograma de entrega devido a problemas logísticos.
+        A técnica de definir o "papel" é uma estratégia eficaz para moldar o que os modelos de IA generativos produzem.
+        Isso nos permite ajustar o estilo,o tom e a complexidade do texto gerado, 
+        tornando-o mais apropriado para diferentes situações ou públicos.
+
+        Obs: Ao usar os mesmo prompts no (Gemini), ele irá te induzir 
+        dar mais informações sobre a hamburgueria
+
+
+2. Few-shot prompting
+    ✓ Outra estratégia de prompt é a chamada "prompting com poucos disparos" (few-shot prompting),
+    que basicamente consiste em fornecer ao modelo de linguagem alguns exemplos do que se espera que ele faça.
+    ✓ Este tipo de instrução permite que a IA aprenda com base nesses poucos exemplos.
+    Tomemos como exemplo a situação em que estamos tentando classificar o feedback do cliente como positivo ou negativo.
+    Apresentamos ao modelo três exemplos de Feedbacks positivos ou negativos e, 
+    em seguida, mostramos a ele um novo comentário ainda não classificado.
+
+    EXEMPLO 1
+        Aprenda com o modelo a seguir e complete a avaliação da última linha.
+        Ótimo produto: positivo
+        Não funcionou muito bem: negativo
+        Super útil, vale a pena: positivo
+        Não funciona!:
+
+    ENTENDENDO MELHOR A ESTRUTURA
+        Um caso de uso fundamental para a instrução com poucos exemplos é quando você 
+        precisa que a saída seja estruturada de uma forma específica que é difícil de explicar ao modelo. 
+        Para entender isso, considere o próximo exemplo.
+
+    EXEMPLO 2:
+        Aprenda com o modelo abaixo.
+        Na cidade do Rio de Janeiro, um grupo diversificado de indivíduos deixou sua marca. Bianca Lobo, uma atriz dedicada, era conhecida por suas peças no teatro municipal. Ramiro Lobo, um engenheiro de software inovador, trabalhou incansavelmente em projetos inovadores que revolucionaram a indústria tecnológica. Enquanto isso, Michelle Santos, uma talentosa psicóloga, criou um método inovador para tratamento de depressão e ansiedade.
+        1. Bianca Lobo [ATRIZ]
+        2. Ramiro Lobo [ENGENHEIRO DE SOFTWARE] 3. Michelle Santos [PSICÓLOGA]
+
+        Morador da cidade Gustavo Guanabara, um brilhante professor, criou um canal de educação no Youtube e ficou famoso no mundo inteiro.
+        Camila Lobo, uma jovem programadora, criou um aplicativo de investimentos na bolsa de valores e Kauê Linden, um famoso publicitário, é conhecido por sua popular agência de marketing. Baseado nos textos e exemplos acima, liste os nomes dos moradores da cidade e suas profissões.
+        Use o formato: Nome [PROFISSÃO].
+
+        Carlinho trabalha recolhendo lixos pela cidade. Marisa Santana, publica vários artigos como publicitária, 
+        João, uma famoso padeiro, que assa seus pães todos os dias com muito amor e carinho
+
+
+3. Combinando Papeis de Prompt
+    Você pode combinar o papel que a inteligência artificial vai desempenhar com comandos 
+    específicos para fazer perguntas mais complicadas.
+    Por exemplo, você pode pedir para a IA agir como um historiador e, ao mesmo tempo, 
+    dar instruções para uma tarefa específica.
+
+    EXEMPLO 1:
+        Você é um historiador especializado na
+        história do Brasil. Escreva um breve resumo
+        dos principais eventos e resultados da independência do país.
+
+    OBS: 
+        Quando maior quantidade de conteúdo, ex: conteúdo de historia, antigos 
+        = menor change de IA aluncinar 
+
+    EXEMPLO 2: COMBINANDO CONTEXTO, INSTRUÇÕES E EXEMPLOS
+
+    Vamos tentar classificar Tweets como positivos ou negativos.
+    O contexto é dado pela explicação sobre o Twitter e a tarefa de classificar tweets.
+    A instrução é dada na frase 'Certifique-se de classificar o último tweet corretamente.'
+    Os exemplos são mostrados com dois tweets, um positivo e um negativo.
+
+        O Twitter é uma plataforma de mídia social onde os usuários podem postar mensagens 
+        curtas chamadas 'tweets'. Os tweets podem ser positivos ou negativos, 
+        e gostaríamos de poder classificá-los como positivos ou negativos. 
+        Abaixo seguem alguns exemplos de tweets positivos e negativos. 
+        Certifique-se de classificar o último tweet corretamente.
+
+        T: Tweet: 'Que dia lindo!'
+        P: Este tweet é positivo ou negativo?
+        R: positivo
+
+        T: Tweet: 'Eu odeio chuva'
+        P: Este tweet é positivo ou negativo?
+        R: negativo
+
+        T: Tweet: 'Adoro as aulas do Gustavo Guanabara'
+        P: Este tweet é positivo ou negativo?
+        R:
+    
+    A combinação de diferentes estratégias de prompting pode levar a resultados mais poderosos e eficazes.
+    Quase todas as perguntas que você fizer vão misturar várias técnicas.

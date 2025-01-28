@@ -142,7 +142,7 @@ Por ser um pouco menor.
 
 
 Trafego é justamente a tecnica para converte
-essas PUBLUCO = AVATAR em a visitante. 
+essas PUBLICO = AVATAR em a visitante. 
 
 elas são:
 
