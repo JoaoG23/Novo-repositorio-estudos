@@ -155,3 +155,61 @@
     mais contexto ao invés de seguir a instrução dada.
 
     IA = conversar como uma pessoa sem conhecimento, explique o contexto primeiro;
+
+5. Aprenda a conversa com robôs
+
+    FUNCIONAMENTO
+        No mundo da inteligencia artificial, existem varios
+        tipos de modelos de linguagem que servem
+        para diferentes objetivos.
+
+        Os modelos mais usados neste curso sao o
+        ChatGPT e o Gemini, que sao robots de conversa
+        que 'lembram' das mensagens anteriores para que
+        voca possa ter um dialogo com ele.
+
+        Mas esses chatbots não são o único tipo de modelo.
+        Temos outros exemplos como algumas APIs, que,
+        ao contrário dos chatbots, não tem 'memória',
+        ou seja, a cada chamada você deve incluir o
+        prompt de preparação novamente (ex.: prompt de
+        atuação).
+
+        Chatbots como o ChatGPT são feitos para simular
+        conversas interativas. Para ter uma conversa, eles
+        precisam 'lembrar' de todo o histórico de conversa.
+        Isso significa que toda vez que voce manda uma
+        nova mensagem, eles releem todas as
+        mensagens anteriores que voces dois enviaram, ja
+        que eles nao tem uma memoria de verdade.
+
+        ChatGPT e outros modelos de IA não leem
+        palavras do mesmo jeito que nos.
+        Enquanto nos lemos a frase 'Eu não gosto de ovos'
+        palavra por palavra, eles podem dividir isso em
+        sua propria versao de palavras e ler assim: Eu,
+        não, gosto, de, ovos.
+
+    TOKENS---
+        Essas 'palavras' sao chamadas de tokens, e
+        quase toda IA moderna usa isso. Cada token vira
+        uma lista de numeros para a IA conseguir
+        processar.
+        Voca nao precisa saber por que as IAs usam
+        tokens, mas e importante entender isso quando se
+        fala de comprimento de contexto.
+
+    COMPRIMENTO DE CONTEXTO---
+
+        Comprimento de contexto se refere a
+        quantidade de texto que um modelo de
+        linguagem pode considerar ao gerar uma resposta.
+        Tanto para chatbots quanto para outros modelos,
+        existe um limite maximo.
+
+        Se a conversa ou texto ultrapassar esse limite, o modelo não vai conseguir 
+        'lembrar' de toda a conversa na hora de responder. 
+        Por isso, as vezes e preciso repetir informações importantes.
+
+        Ex: Igual um aluno que esquece a materia dada após 
+        uma semana sem ver dada da matéria
