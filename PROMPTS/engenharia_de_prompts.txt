@@ -501,4 +501,121 @@ CASOS ESPECIAIS
             Departamento de atendimento, Departamento
             administrativo e Departamento de manutenção.
 
+        EXEMPLO 3:
+            "Adicione comentarios de linha a este código PHP e reformate-o para maior legibilidade:
+
+            <?php function getDayOfWeek($date) { $dateTime = new DateTime($date); $dayOfWeek = $dateTime->format('w'); 
+            $days = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 
+            'Quinta-feira', 'Sexta-feira', 'Sábado']; return $days[$dayOfWeek]; }" 
         
+        EXEMPLO 4:
+            De agora em diante você é um programador sênior de PHP. Otimize o script abaixo
+            for ($num = 1; $num <= 100; $num++) {
+                if ($num == 1) continue;
+                $isPrime = true;
+                for ($i = 2; $i < $num; $i++) {
+                    if ($num % $i == 0) {
+                        $isPrime = false;
+                        break;
+                    }
+                }
+                if ($isPrime) echo $num . "\n";
+            }
+
+    Rescrevendo um em outra linguagem
+
+        EXEMPLO 1:
+
+            De agora em diante você é um programador sênior de PHP e JavaScript.
+            Converta o código abaixo de PHP para JavaScript.
+
+            Código PHP:
+
+            PHP
+
+            for ($num = 2; $num <= 100; $num++) {
+            $isPrime = true;
+                for ($i = 2, $max = sqrt($num); $i <= $max; $i++) {
+                    if ($num % $i == 0) {
+                    $isPrime = false;
+                    break;
+                    }
+                }
+            if ($isPrime) echo $num. "\n";
+            }
+
+        EXEMPLO 2:
+            De agora em diante você é um programador sênior de PHP e JavaScript.
+            Converta o código abaixo de PHP para JavaScript.
+
+            Código PHP:
+
+            PHP
+
+            for ($num = 2; $num <= 100; $num++) {
+            $isPrime = true;
+                for ($i = 2, $max = sqrt($num); $i <= $max; $i++) {
+                    if ($num % $i == 0) {
+                    $isPrime = false;
+                    break;
+                    }
+                }
+            if ($isPrime) echo $num. "\n";
+            }
+
+        EXEMPLO 3:
+            Crie uma expressão regular capaz de capturar todos os conteúdos 
+            encontrados entre as tags html  <p> e </p>
+
+        EXEMPLO 4:
+            Explique a expressão regular:  (\W|^) po [#-]{0,1}\s{0,1}\d{2}[\s]{0,1}\d{4}(\W|$)
+
+13. ASSISTENCIA EM PROJETOS
+
+    A IA pode ser usada como um mentor para te ajudar a formatar projetos nas áreas mais distintas.
+
+        EXEMPLO 1:
+            De agora em diante você é um especialista em TI. Eu sou um gerente de TI de uma empresa de desenvolvimento de software. 
+            Um de nossos cliente encomendou o desenvolvimento de projeto de site de venda de veículos usados. 
+            Que linguagem de programação e banco de dados devo usar no projeto? Quais ferramentas open source, temas e plugins posso usar para este projeto? Quais as habilidades técnicas a equipe envolvida no projeto precisa ter? 
+            Que tipo de fornecedor de serviços vou precisar? Que outras coisas ou ferramentas devo adicionar no projeto?
+
+        EXEMPLO 2:
+            De agora em diante você é um especialista em salão de beleza. Estou montando um salão de beleza 
+            e preciso que você me ajude a montar o planejamento deste negócio. Acabei de alugar uma sala de 200 metros quadrados. 
+            Preciso de ideias de nome e logo, que tipo móveis e equipamentos devo comprar incluindo a quantidade, 
+            que tipo de profissionais devo contratar, como faço para divulgar esse negócio, documentos, autorizações e tudo mais que você achar necessário. 
+            Pretendo oferecer os serviços de manicure, corte e coloração de cabelos
+
+            Me ajude a criar três opções de logo, seguindo as suas recomendações citadas acima.
+
+14. MARKETING DIGITAL
+        EXEMPLO 1:
+            Passe a se comportar como um profissional de marketing digital especializado em estratégias de conteúdo, SEO, e campanhas em redes sociais. 
+            Seu papel é fornecer respostas detalhadas e orientadas para ajudar no planejamento e execução de estratégias de marketing eficientes. 
+            Você possui experiência em marketing de conteúdo, branding, análise de métricas, e otimização de campanhas. 
+            Além disso, você é capaz de adaptar suas respostas para diferentes níveis de conhecimento, explicando conceitos complexos de forma acessível 
+            ou aprofundando-se tecnicamente, conforme a necessidade. 
+            Mantenha um tom amigável e colaborativo, fornecendo conselhos práticos e exemplos reais quando necessário. Nas interações futuras, ajuste o seu tom e nível de detalhe conforme as informações específicas dos próximos prompts fornecidos pelo usuário.
+
+        EXEMPLO 2:
+            Para um cliente que deseja promover sua loja de petshop, com um orçamento de R$ 20.000, 
+            gere uma tabela mostrando quanto dinheiro deve ser gasto em quais canais de marketing. 
+            Use colunas para o canal de marketing, a alocação orçamentária e o raciocínio por trás disso.
+
+        EXEMPLO 3:
+            Crie um e-mail introdutório para [nome do influenciador], 
+            para perguntar sobre como iniciar uma parceria para divulgar o petshop chamado GuanaPet.
+
+        EXEMPLO 4:
+            Gere uma tabela com 5 opções de tags de título rápidas com palavras poderosas de SEO para um artigo de blog anunciando uma nova coleira com localizador da GuanaPet. 
+            Cada título deve ter menos de 60 caracteres e incorporar a palavra-chave para SEO "A coleira pet das celebridades". 
+            Adicione uma coluna para exibir as 5 meta descrições correspondentes, que também devem incorporar a mesma palavra-chave para SEO e uma frase de chamariz.
+        EXEMPLO 5:
+            Gere 5 frases de chamariz de três palavras para uma nova campanha anunciando a coleira pet com localizador da GuanaPet.
+
+15.OUTROS
+        EXEMPLO 1:
+            Gerar contratos
+            Tirar dúvidas de contrato: Peça para a IA explicar um parágrafo
+            Verificar se contém linguagem jurídica perigosa que favorece a uma das partes
