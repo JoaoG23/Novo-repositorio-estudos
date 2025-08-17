@@ -407,7 +407,7 @@ CASOS ESPECIAIS
             Nome da empresa: Hostnet
             Meu nome: Ramiro Lobo
             
-            Escreva um e-mail de divulgação para o empresário, chamado GustavoGuanabara, apresentando-lhe nosso produto, que é um Sistema de EAD. Escreva um e-mail formal, mas acessível. 
+            Escreva um e-mail de divulgação para o empresário, chamado Gustavo Guanabara, apresentando-lhe nosso produto, que é um Sistema de EAD. Escreva um e-mail formal, mas acessível. 
             Mencione detalhes relevantes de suas informações doLinkedIn acima para ajudar na composição do e-mail.
 9. BLOGS
         EXEMPLO 1:
