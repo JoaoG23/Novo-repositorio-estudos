@@ -34,7 +34,7 @@ _docker start (CONTAINER)_ = Reinicia o container recên criado.
 _docker images_ = Mostra as imagens existente no container
 
 
-_docker build . -t nome da imagem_ = Mostra as imagens existente no container
+_docker build . -t nome da imagem_ = Criar uma imagem no docker
 
 PARAR-----------
 
