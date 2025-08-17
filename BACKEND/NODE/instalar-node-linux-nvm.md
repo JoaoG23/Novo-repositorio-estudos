@@ -45,3 +45,8 @@ nvm use 16
 ```
 
 Again, replace `16` with your desired Node.js version¹.
+
+
+Nova versão 
+
+https://www.youtube.com/watch?v=LU1TYsyPim0
