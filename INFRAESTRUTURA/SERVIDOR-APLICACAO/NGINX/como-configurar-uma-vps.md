@@ -130,6 +130,7 @@ server {
 }
 ```
 
+
 Recarregar:
 
 ```bash
@@ -214,6 +215,8 @@ Coloque o dominio:
 
     seudominio.com www.seudominio.com
 
+    
+
 # 7️⃣ Renovação automática do SSL
 
 Adicionar no cron:
@@ -245,9 +248,7 @@ Abrir no navegador:
 ```
 https://seudominio.com
 ```
-
 Se aparecer 🔒 cadeado → SSL ativo.
-
 # 9️⃣ Configurar proxy reverso
 
 ```nginx
@@ -311,7 +312,6 @@ server {
 }
 
 ```
-
 Recarregar:
 
 ```bash
@@ -321,8 +321,8 @@ systemctl reload nginx
 
 ### Obs: Caso queira um configuração sem SSL
 
-Basta remover as linhas que começam com `ssl_` e `listen [::]:443 ssl ipv6only=on; listen 443 ssl;`
-e também o bloco `server` que começa com `if ($host = www.seudominio.com)`.
+Basta remover as linhas que começam com `ssl_` e `listen [::]:443 ssl ipv6only=on; listen 443 ssl;` 
+e também o bloco `server` que começa com `if ($host = www.seudominio.com)`. 
 
 ```nginx
 
